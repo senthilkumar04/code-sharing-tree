@@ -1,15 +1,21 @@
-import Head from "next/head"
-import { Component } from 'react'
-import { attributes, react as HomeContent } from '../content/home.md';
+/** Core imports */
+import React, { Fragment, Component } from "react";
+
+/** Layouts imports */
+
+/** Material UI imports */
+import Container from "@material-ui/core/Container";
+
+/** Components imports */
+
+/** Contents imports */
+import { attributes, react as HomeContent } from "../content/home.md";
 
 export default class Home extends Component {
   render() {
     let { title, cats } = attributes;
     return (
-      <>
-        <Head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        </Head>
+      <Container>
         <article>
           <h1>{title}</h1>
           <HomeContent />
@@ -22,7 +28,7 @@ export default class Home extends Component {
             ))}
           </ul>
         </article>
-      </>
-    )
+      </Container>
+    );
   }
 }
