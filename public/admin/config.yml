@@ -23,8 +23,5 @@ collections:
             - { label: "Description", name: "description", widget: "text"}
   - name: "menus"
     label: "Menus"
-    files:
-    - label: "Home"
-      name: "home"
-      fields:
+    fields:
       - {label: "Home", link: "/", widget: "string"}
