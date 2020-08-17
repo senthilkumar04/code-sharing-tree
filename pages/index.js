@@ -1,5 +1,5 @@
 /** Core imports */
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 
 /** Layouts imports */
 

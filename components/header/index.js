@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Link from "next/link";
 
 import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
@@ -29,9 +30,11 @@ const MenuListDrawer = ({ menus, openDrawer, toggleDrawer, anchor }) => {
       >
         <List>
           {menus.map((menu) => (
-            <ListItem button key={menu.id}>
-              <ListItemText primary={menu.label} />
-            </ListItem>
+            <Link href={menu.link} key={menu.id}>
+                <ListItem button>
+                    <ListItemText primary={menu.label} />
+                </ListItem>
+            </Link>
           ))}
         </List>
       </StyledMenuDrawerBox>
@@ -50,11 +53,13 @@ const MenuList = ({ menus }) => {
       {menus.map((menu) => {
         const { id, label, srLabel } = menu;
         return (
-          <StyledMenuItem key={id}>
-            <Typography aria-label={srLabel} variant="body1">
-              {label}
-            </Typography>
-          </StyledMenuItem>
+            <Link href={menu.link} key={id}>
+                <StyledMenuItem>
+                    <Typography aria-label={srLabel} variant="body1">
+                    {label}
+                    </Typography>
+                </StyledMenuItem>
+            </Link>
         );
       })}
     </Box>
@@ -68,16 +73,19 @@ const Header = (props) => {
       id: "nav-menu-home",
       label: "Home",
       srLabel: "Tap to go to Home page",
+      link: '/'
     },
     {
       id: "nav-menu-about",
       label: "About us",
       srLabel: "Tap to go to About us page",
+      link: '/about'
     },
     {
       id: "nav-menu-contact",
       label: "Contact us",
       srLabel: "Tap to go to Contact us page",
+      link: '/contact'
     },
   ];
 
