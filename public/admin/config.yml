@@ -21,7 +21,3 @@ collections:
           fields:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
-  - name: "menus"
-    label: "Menus"
-    fields:
-      - {label: "Home", link: "/", widget: "string"}
