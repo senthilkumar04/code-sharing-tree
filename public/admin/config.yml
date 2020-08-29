@@ -21,3 +21,11 @@ collections:
           fields:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
+  - label: "Menu"
+    name: "menu"
+    folder: "_settings/menu"
+    create: true
+    identifier_field: name
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Page URL", name: "page-url", widget: "string"}
