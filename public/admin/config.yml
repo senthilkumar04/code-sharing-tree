@@ -27,5 +27,5 @@ collections:
     create: true
     identifier_field: name
     fields:
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Page URL", name: "page-url", widget: "string"}
