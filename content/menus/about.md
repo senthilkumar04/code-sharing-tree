@@ -1,4 +1,5 @@
 ---
-label: About Us
-pageUrl: /about
+name: About Us
+page-url: /about
 ---
+
