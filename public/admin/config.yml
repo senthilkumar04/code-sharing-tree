@@ -31,4 +31,11 @@ collections:
       - {label: "Menu URL", name: "menu-url", widget: "string"}
       - {label: "Is menu inline ?", name: "menu-inline", widget: "boolean", default: true}
       - {label: "Is menu special ?", name: "menu-special", widget: "boolean", default: false, required: false}
+  - label: "Settings"
+    name: "settings"
+    file: "content/settings"
+    identifier_field: name
+    fields:
+      - {label: "Site title", name: "site-title", widget: "string"}
+      - {label: "Logo Alternate title", name: "logo-alt-title", widget: "string"}
 
