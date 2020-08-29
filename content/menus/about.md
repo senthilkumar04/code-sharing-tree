@@ -1,5 +1,7 @@
 ---
-title: About Us
-page-url: /about
+menu-title: About us
+menu-url: about-us
+menu-inline: true
+menu-special: false
 ---
 
