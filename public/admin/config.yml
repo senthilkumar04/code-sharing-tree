@@ -27,8 +27,8 @@ collections:
     create: true
     identifier_field: name
     fields:
-      - {label: "Menu title", name: "menu-title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Menu URL", name: "menu-url", widget: "string"}
       - {label: "Is menu inline ?", name: "menu-inline", widget: "boolean", default: true}
-      - {label: "Is menu special ?", name: "menu-special", widget: "boolean", default: false}
+      - {label: "Is menu special ?", name: "menu-special", widget: "boolean", default: false, required: false}
 
