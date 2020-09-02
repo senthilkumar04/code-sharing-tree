@@ -1,7 +1,8 @@
 ---
 title: Our team
-menu-url: our-team
-menu-inline: true
-menu-special: false
+srTitle: Tap to scroll to the teams section
+menuURL: our-team
+menuInline: true
+menuSpecial: false
 ---
 
