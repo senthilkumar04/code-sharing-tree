@@ -1,7 +1,8 @@
 ---
 title: What we do
-menu-url: what-we-do
-menu-inline: true
-menu-special: false
+srTitle: Tap to scroll to the what we do section
+menuURL: what-we-do
+menuInline: true
+menuSpecial: false
 ---
 
