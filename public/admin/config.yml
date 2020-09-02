@@ -28,9 +28,10 @@ collections:
     identifier_field: name
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Menu URL", name: "menu-url", widget: "string"}
-      - {label: "Is menu inline ?", name: "menu-inline", widget: "boolean", default: true}
-      - {label: "Is menu special ?", name: "menu-special", widget: "boolean", default: false, required: false}
+      - {label: "Accessible Title", name: "srTitle", widget: "string"}
+      - {label: "Menu URL", name: "menuURL", widget: "string"}
+      - {label: "Is menu inline ?", name: "menuInline", widget: "boolean", default: true}
+      - {label: "Is menu special ?", name: "menuSpecial", widget: "boolean", default: false, required: false}
   - label: "Settings"
     name: "settings"
     files:
@@ -38,12 +39,12 @@ collections:
         name: "general-settings"
         file: "content/settings/general.md"
         fields:
-          - {label: Website title, name: site-title, widget: string}
+          - {label: Website title, name: siteTitle, widget: string}
           - label: Logo
-            name: site-logo
+            name: siteLogo
             widget: image
             media_library:
               config:
                 multiple: false
-          - {label: Logo alternate title, name: logo-alt-title, widget: string}
+          - {label: Logo alternate title, name: logoAltTitle, widget: string}
 

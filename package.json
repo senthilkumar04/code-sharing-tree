@@ -20,6 +20,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "frontmatter-markdown-loader": "^3.4.2"
+    "frontmatter-markdown-loader": "^3.4.2",
+    "gray-matter": "^4.0.2"
   }
 }

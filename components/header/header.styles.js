@@ -7,29 +7,30 @@ import { styled } from '@material-ui/core/styles';
 export const StyledLogoBox = styled(Box)(({ theme }) => {
     return {
         margin: '0 auto',
-        color: theme.palette.common.white
+        color: theme.palette.primary.main,
     }
 })
 
 export const StyledIconButton = styled(IconButton)(({ theme }) => {
     return {
-        color: theme.palette.common.white
+        color: theme.palette.primary.main,
     }
 })
 
 export const StyledLogoTitle = styled(Typography)(({ theme }) => {
     return {
-        fontWeight: theme.typography.fontWeightBold
+        color: theme.palette.primary.main,
+        fontWeight: theme.typography.fontWeightBold,
     }
 })
 
 export const StyledMenuItem = styled(ButtonBase)(({ theme }) => {
     return {
-        color: theme.palette.common.white,
+        color: theme.palette.primary.main,
         padding: `${theme.spacing(2)}px`,
         "&:hover": {
-            backgroundColor: theme.palette.common.white,
-            color: theme.palette.primary.main
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.common.white,
         }
     }
 })
@@ -37,5 +38,14 @@ export const StyledMenuItem = styled(ButtonBase)(({ theme }) => {
 export const StyledMenuDrawerBox = styled(Box)(({ theme }) => {
     return {
         width: '250px'
+    }
+})
+
+export const StyledHeader = styled(Box)(({ theme }) => {
+    return {
+        backgroundColor: theme.palette.common.white,
+        borderBottom: `2px`,
+        borderBottomStyle: 'solid',
+        borderBottomColor: theme.palette.primary.main,
     }
 })
