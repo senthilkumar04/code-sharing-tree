@@ -1,7 +1,8 @@
 ---
 title: Our stories
-menu-url: our-stories
-menu-inline: true
-menu-special: false
+srTitle: Tap to scroll to the stories section
+menuURL: our-stories
+menuInline: true
+menuSpecial: false
 ---
 
