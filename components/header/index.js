@@ -17,8 +17,8 @@ import MenuList from './MenuList';
 import MenuListDrawer from './MenuListDrawer';
 
 const Header = (props) => {
-  const { logoTitle, srLogoTitle, menus } = props;
-  const menuList = [
+  const { logoTitle, srLogoTitle, menuList } = props;
+  /* const menuList = [
     {
       id: "nav-menu-home",
       label: "Home",
@@ -37,7 +37,7 @@ const Header = (props) => {
       srLabel: "Tap to go to Contact us page",
       link: "/contact",
     },
-  ];
+  ];*/
 
   const [state, setState] = useState({
     openDrawer: false,

@@ -22,6 +22,8 @@ export default function App({ Component, pageProps }) {
     }
   }, []);
 
+  const { menus = [] } = pageProps;
+
   return (
     <Fragment>
       <Head>
@@ -33,7 +35,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <CommonLayout>
+        <CommonLayout menus={menus}>
             <Component {...pageProps} />
         </CommonLayout>
       </ThemeProvider>

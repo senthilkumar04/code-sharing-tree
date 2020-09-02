@@ -1,21 +1,22 @@
 import matter from "gray-matter";
+import * as _ from 'lodash';
 
 const fs = require("fs");
 
 export const getNavigationMenuList = () => {
   const menuContentBaseURL = `content/menus`;
   const menuFiles = fs.readdirSync(`${process.cwd()}/${menuContentBaseURL}`);
-  return menuFiles.map((fileName, index) => {
+  return _.sortBy(menuFiles.map(fileName => {
     const menuMarkdown = fs
       .readFileSync(`${menuContentBaseURL}/${fileName}`)
       .toString();
     const { data: menuData } = matter(menuMarkdown);
     return mapMenuData(menuData);
-  });
+  }), ['order']);
 };
 
 const mapMenuData = (menu) => {
-    const { title: menuTitle, srTitle = '', menuUrl = '', menuInline = false, menuSpecial = false } = menu;
+    const { title: menuTitle, srTitle = '', menuUrl = '', menuInline = false, menuSpecial = false, menuOrder = 0 } = menu;
     return {
         id: `nav-${menuUrl}`,
         label: menuTitle,
@@ -23,5 +24,6 @@ const mapMenuData = (menu) => {
         isInline: menuInline,
         isSpecial: menuSpecial,
         link: menuUrl,
+        order: menuOrder
     }
 };
