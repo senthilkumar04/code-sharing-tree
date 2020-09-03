@@ -1,7 +1,7 @@
 ---
 title: Donate
 srTitle: Tap to make a donation
-menuURL: donate
+menuUrl: donate
 menuInline: false
 menuSpecial: true
 menuOrder: 5
