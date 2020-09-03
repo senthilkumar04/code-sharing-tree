@@ -20,7 +20,7 @@ const mapMenuData = (menu) => {
     return {
         id: `nav-${menuUrl}`,
         label: menuTitle,
-        accessibleLabel: srTitle,
+        srLabel: srTitle,
         isInline: menuInline,
         isSpecial: menuSpecial,
         link: menuUrl,
