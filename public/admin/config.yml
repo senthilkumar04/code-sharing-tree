@@ -53,12 +53,11 @@ collections:
         fields:
           - label: "Footer Widgets"
             name: "footerWidgets"
-            identifier_field: name
-            widget: object
+            widget: list
+            allow_add: false
             fields:
               - label: "Social Widget"
                 name: "socialWidget"
-                identifier_field: name
                 widget: object
                 fields:
                   - {label: Widget Title, name: widgetTitle, widget: string}
@@ -67,8 +66,7 @@ collections:
                   - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
                   - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
               - label: "Reach us Widget"
-                name: reachUsWidget
-                identifier_field: name
+                name: "reachUsWidget"
                 widget: object
                 fields:
                   - {label: Widget Title, name: widgetTitle, widget: string}
@@ -82,8 +80,7 @@ collections:
                   - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
                   - {label: Contact phone number, name: phoneNumber, widget: string, required: false }
               - label: "Quick links Widget"
-                name: quickLinkWidget
-                identifier_field: name
+                name: "quickLinkWidget"            
                 widget: object
                 fields:
                   - {label: Widget Title, name: widgetTitle, widget: string, default: "We are social"}
