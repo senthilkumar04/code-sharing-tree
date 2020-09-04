@@ -47,4 +47,15 @@ collections:
               config:
                 multiple: false
           - {label: Logo alternate title, name: logoAltTitle, widget: string}
+      - label: "Footer Settings"
+        name: "footer-settings"
+        files:
+          - label: "Social Widget"
+            name: "social-widget"
+            file: "content/settings/footer/social.md"
+            fields:
+              - {label: Widget Title, name: widgetTitle, widget: string}
+              - {label: Facebook URL, name: facebookUrl, widget: string}
+              - {label: Instagram URL, name: instagramUrl, widget: string}
+              - {label: Twitter URL, name: twitterUrl, widget: string}
 

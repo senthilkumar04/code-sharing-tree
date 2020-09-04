@@ -12,14 +12,8 @@ const Footer = () => {
         <Fragment>
             <StyledFooter display="flex" flexDirection="row" justifyContent="space-between">
                 <StyledCopyRightsBox>
-                    <Typography variant="body2">&copy; 2020 Sharing Tree Trust. All Rights Reserved</Typography>
+                    <Typography variant="body2">&copy; Copyright 2020 Sharing Tree Trust.</Typography>
                 </StyledCopyRightsBox>
-                <Box>
-                    <Typography variant="body2">
-                        <Link href="/contact">Privacy policy</Link>
-                        <Link href="/about">Terms & conditions</Link>
-                    </Typography>
-                </Box>
             </StyledFooter>
         </Fragment>
     );
