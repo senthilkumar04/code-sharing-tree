@@ -55,7 +55,7 @@ collections:
             name: "socialWidget"
             widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string, default: "We are social"}
+              - {label: Widget Title, name: title, widget: string, default: "We are social"}
               - {label: Enable, name: widgetEnable, widget: boolean, default: true}
               - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
               - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
