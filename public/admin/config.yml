@@ -105,9 +105,10 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
-                    display_fields: ["footerSettings.footerWidgets.label"]
-                    value_field: "footerSettings.footerWidgets.name"
+                    search_fields: ["footerWidgets.name"]
+                    display_fields: ["footerWidgets.label"]
+                    value_field: "footerWidgets.name"
+                    required: false
               - label: "Column 2"
                 name: "footerColumn2"
                 widget: object
@@ -117,9 +118,10 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
-                    display_fields: ["footerSettings.footerWidgets.label"]
-                    value_field: "footerSettings.footerWidgets.name"
+                    search_fields: ["footerWidgets.name"]
+                    display_fields: ["footerWidgets.label"]
+                    value_field: "footerWidgets.name"
+                    required: false
               - label: "Column 3"
                 name: "footerColumn3"
                 widget: object
@@ -129,9 +131,10 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
-                    display_fields: ["footerSettings.footerWidgets.label"]
-                    value_field: "footerSettings.footerWidgets.name"
+                    search_fields: ["footerWidgets.name"]
+                    display_fields: ["footerWidgets.label"]
+                    value_field: "footerWidgets.name"
+                    required: false
               - label: "Column 4"
                 name: "footerColumn4"
                 widget: object
@@ -141,7 +144,8 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
-                    display_fields: ["footerSettings.footerWidgets.label"]
-                    value_field: "footerSettings.footerWidgets.name"
+                    search_fields: ["footerWidgets.name"]
+                    display_fields: ["footerWidgets.label"]
+                    value_field: "footerWidgets.name"
+                    required: false
                   
