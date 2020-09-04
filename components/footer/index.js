@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 
 import Typography from '@material-ui/core/Typography';
 
-import { StyledFooter, StyledCopyRightsBox } from './Footer.styles';
+import { StyledFooter, StyledCopyRightsBox } from './footer.styles';
 
 const Footer = () => {
     return (
