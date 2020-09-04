@@ -1,11 +1,8 @@
 import React, {Fragment} from 'react';
-import Link from "next/link";
 
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import { StyledFooter, StyledCopyRightsBox } from './footer.styles';
+import { StyledFooter, StyledCopyRightsBox } from './Footer.styles';
 
 const Footer = () => {
     return (

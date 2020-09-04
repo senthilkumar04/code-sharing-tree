@@ -36,7 +36,7 @@ collections:
     name: "settings"
     files:
       - label: "General Settings"
-        name: "general-settings"
+        name: "generalSettings"
         file: "content/settings/general.md"
         fields:
           - {label: Website title, name: siteTitle, widget: string}
@@ -48,44 +48,100 @@ collections:
                 multiple: false
           - {label: Logo alternate title, name: logoAltTitle, widget: string}
       - label: "Footer Settings"
-        name: "footer-settings"
+        name: "footerSettings"
         file: "content/settings/footer.md"
         fields:
-          - label: "Social Widget"
-            name: "socialWidget"
+          - label: "Footer Widgets"
+            name: "footerWidgets"
             widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string}
-              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-              - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
-              - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
-              - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
-          - label: "Reach us Widget"
-            name: "reachUsWidget"
+              - label: "Social Widget"
+                name: "socialWidget"
+                widget: object
+                fields:
+                  - {label: Widget Title, name: widgetTitle, widget: string}
+                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+                  - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
+                  - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
+                  - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
+              - label: "Reach us Widget"
+                name: "reachUsWidget"
+                widget: object
+                fields:
+                  - {label: Widget Title, name: widgetTitle, widget: string}
+                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+                  - {label: Organisation Name, name: orgName, widget: string, required: true}
+                  - {label: Address line 1 URL, name: addressLine1, widget: string, required: true}
+                  - {label: Address line 2 URL, name: addressLine2, widget: string, required: false}
+                  - {label: City, name: cityName, widget: string, required: true}
+                  - {label: State, name: stateName, widget: string, required: true}
+                  - {label: Pincode, name: pincode, widget: string, required: true}
+                  - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
+                  - {label: Contact phone number, name: emailAddress, widget: string, required: false }
+              - label: "Quick links Widget"
+                name: "quickLinkWidget"
+                widget: object
+                fields:
+                  - {label: Widget Title, name: widgetTitle, widget: string, default: "We are social"}
+                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+                  - {label: Link 1 label, name: link1Label, widget: string, required: false}
+                  - {label: Link 1 url, name: link1Value, widget: string, required: false}
+                  - {label: Link 2 label, name: link2Label, widget: string, required: false}
+                  - {label: Link 2 url, name: link2Value, widget: string, required: false}
+                  - {label: Link 3 label, name: link3Label, widget: string, required: false}
+                  - {label: Link 3 url, name: link3Value, widget: string, required: false}
+                  - {label: Link 4 label, name: link4Label, widget: string, required: false}
+                  - {label: Link 4 url, name: link4Value, widget: string, required: false}
+          - label: "Footer column layout"
+            name: "footerColumnLayout"
             widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string}
-              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-              - {label: Organisation Name, name: orgName, widget: string, required: true}
-              - {label: Address line 1 URL, name: addressLine1, widget: string, required: true}
-              - {label: Address line 2 URL, name: addressLine2, widget: string, required: false}
-              - {label: City, name: cityName, widget: string, required: true}
-              - {label: State, name: stateName, widget: string, required: true}
-              - {label: Pincode, name: pincode, widget: string, required: true}
-              - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
-              - {label: Contact phone number, name: emailAddress, widget: string, required: false }
-          - label: "Quick links Widget"
-            name: "quickLinkWidget"
-            widget: object
-            fields:
-              - {label: Widget Title, name: widgetTitle, widget: string, default: "We are social"}
-              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-              - {label: Link 1 label, name: link1Label, widget: string, required: false}
-              - {label: Link 1 url, name: link1Value, widget: string, required: false}
-              - {label: Link 2 label, name: link2Label, widget: string, required: false}
-              - {label: Link 2 url, name: link2Value, widget: string, required: false}
-              - {label: Link 3 label, name: link3Label, widget: string, required: false}
-              - {label: Link 3 url, name: link3Value, widget: string, required: false}
-              - {label: Link 4 label, name: link4Label, widget: string, required: false}
-              - {label: Link 4 url, name: link4Value, widget: string, required: false}
-
+              - label: "Column 1"
+                name: "footerColumn1"
+                widget: object
+                fields:
+                  - label: "Column 1 widget"
+                    name: "column1Widget"
+                    widget: "relation"
+                    collection: "settings"
+                    file: "footerSettings"
+                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
+                    display_fields: ["footerSettings.footerWidgets.label"]
+                    value_field: "footerSettings.footerWidgets.name"
+              - label: "Column 2"
+                name: "footerColumn2"
+                widget: object
+                fields:
+                  - label: "Column 2 widget"
+                    name: "column2Widget"
+                    widget: "relation"
+                    collection: "settings"
+                    file: "footerSettings"
+                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
+                    display_fields: ["footerSettings.footerWidgets.label"]
+                    value_field: "footerSettings.footerWidgets.name"
+              - label: "Column 3"
+                name: "footerColumn3"
+                widget: object
+                fields:
+                  - label: "Column 3 widget"
+                    name: "column3Widget"
+                    widget: "relation"
+                    collection: "settings"
+                    file: "footerSettings"
+                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
+                    display_fields: ["footerSettings.footerWidgets.label"]
+                    value_field: "footerSettings.footerWidgets.name"
+              - label: "Column 4"
+                name: "footerColumn4"
+                widget: object
+                fields:
+                  - label: "Column 4 widget"
+                    name: "column4Widget"
+                    widget: "relation"
+                    collection: "settings"
+                    file: "footerSettings"
+                    search_fields: ["footerSettings.footerWidgets.name", "footerSettings.footerWidgets.label"]
+                    display_fields: ["footerSettings.footerWidgets.label"]
+                    value_field: "footerSettings.footerWidgets.name"
+                  
