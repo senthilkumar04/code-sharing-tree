@@ -18,27 +18,6 @@ import MenuListDrawer from './MenuListDrawer';
 
 const Header = (props) => {
   const { logoTitle, srLogoTitle, menuList } = props;
-  /* const menuList = [
-    {
-      id: "nav-menu-home",
-      label: "Home",
-      srLabel: "Tap to go to Home page",
-      link: "/",
-    },
-    {
-      id: "nav-menu-about",
-      label: "About us",
-      srLabel: "Tap to go to About us page",
-      link: "/about",
-    },
-    {
-      id: "nav-menu-contact",
-      label: "Contact us",
-      srLabel: "Tap to go to Contact us page",
-      link: "/contact",
-    },
-  ];*/
-
   const [state, setState] = useState({
     openDrawer: false,
   });
@@ -81,7 +60,7 @@ const Header = (props) => {
         </StyledLogoBox>
       </Box>
       <Box display={{ xs: "none", sm: "none", md: "block" }} px={2}>
-        <Divider variant="middle" />
+        <Divider variant="middle" light />
         <MenuList menus={menuList} />
       </Box>
     </StyledHeader>

@@ -6,8 +6,9 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
 
-import { StyledMenuDrawerBox } from "./header.styles";
+import { StyledMenuDrawerBox, StyledQuoteBox } from "./header.styles";
 
 const MenuListDrawer = ({ menus, openDrawer, toggleDrawer, anchor }) => {
   return (
@@ -17,6 +18,9 @@ const MenuListDrawer = ({ menus, openDrawer, toggleDrawer, anchor }) => {
         onClick={toggleDrawer(false)}
         onKeyDown={toggleDrawer(false)}
       >
+        <StyledQuoteBox>
+          <Typography variant="subtitle2" align="center">"Giving is the greatest act of grace."</Typography>
+        </StyledQuoteBox>
         <List>
           {menus.map((menu) => (
             <Link href={menu.link} key={menu.id}>

@@ -16,11 +16,11 @@ const MenuList = ({ menus }) => {
       justifyContent="center"
     >
       {menus.map((menu) => {
-        const { id, label, srLabel, isInline, link } = menu;
+        const { id, label, srLabel, isInline, link, isSpecial } = menu;
         const menuUrl = isInline ? `#${link}` : `/${link}`;
         return (
           <Link href={menuUrl} key={id}>
-            <StyledMenuItem>
+            <StyledMenuItem isspecial={isSpecial}>
               <Typography aria-label={srLabel} variant="body1">
                 {label}
               </Typography>

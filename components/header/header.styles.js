@@ -24,7 +24,14 @@ export const StyledLogoTitle = styled(Typography)(({ theme }) => {
     }
 })
 
-export const StyledMenuItem = styled(ButtonBase)(({ theme }) => {
+export const StyledMenuItem = styled(ButtonBase)(({ theme, isspecial = false }) => {
+    if(isspecial) {
+        return {
+            color: theme.palette.common.white,
+            backgroundColor: theme.palette.primary.main,
+            padding: `${theme.spacing(2)}px`,
+        }
+    }
     return {
         color: theme.palette.primary.main,
         padding: `${theme.spacing(2)}px`,
@@ -41,10 +48,23 @@ export const StyledMenuDrawerBox = styled(Box)(({ theme }) => {
     }
 })
 
+export const StyledQuoteBox = styled(Box)(({ theme }) => {
+    return {
+        height: '100px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        padding: `${theme.spacing(2)}px`,
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.common.white,
+    }
+})
+
 export const StyledHeader = styled(Box)(({ theme }) => {
     return {
         backgroundColor: theme.palette.common.white,
-        borderBottom: `2px`,
+        borderBottom: `3px`,
         borderBottomStyle: 'solid',
         borderBottomColor: theme.palette.primary.main,
     }
