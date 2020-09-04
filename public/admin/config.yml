@@ -33,7 +33,7 @@ collections:
       - {label: "Is menu special ?", name: "menuSpecial", widget: "boolean", default: false, required: false}
       - {label: "Menu Order", name: "menuOrder", widget: "number"}
   - label: "Settings"
-    name: "settings"
+    name: settings
     identifier_field: name
     files:
       - label: "General Settings"
