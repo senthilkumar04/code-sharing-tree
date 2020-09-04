@@ -33,8 +33,7 @@ collections:
       - {label: "Is menu special ?", name: "menuSpecial", widget: "boolean", default: false, required: false}
       - {label: "Menu Order", name: "menuOrder", widget: "number"}
   - label: "Settings"
-    name: settings
-    identifier_field: name
+    name: "settings"
     files:
       - label: "General Settings"
         name: "generalSettings"
@@ -49,17 +48,16 @@ collections:
                 multiple: false
           - {label: Logo alternate title, name: logoAltTitle, widget: string}
       - label: "Footer Settings"
-        name: footerSettings
-        identifier_field: name
+        name: "footerSettings"
         file: "content/settings/footer.md"
         fields:
           - label: "Footer Widgets"
-            name: footerWidgets
+            name: "footerWidgets"
             identifier_field: name
             widget: object
             fields:
               - label: "Social Widget"
-                name: socialWidget
+                name: "socialWidget"
                 identifier_field: name
                 widget: object
                 fields:
@@ -111,9 +109,9 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerWidgets.name"]
-                    display_fields: ["footerWidgets.label"]
-                    value_field: "footerWidgets.name"
+                    search_fields: ["footerWidgets.*.name"]
+                    display_fields: ["footerWidgets.*.label"]
+                    value_field: "footerWidgets.*.name"
                     required: false
               - label: "Column 2"
                 name: "footerColumn2"
@@ -124,9 +122,9 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerWidgets.name"]
-                    display_fields: ["footerWidgets.label"]
-                    value_field: "footerWidgets.name"
+                    search_fields: ["footerWidgets.*.name"]
+                    display_fields: ["footerWidgets.*.label"]
+                    value_field: "footerWidgets.*.name"
                     required: false
               - label: "Column 3"
                 name: "footerColumn3"
@@ -137,9 +135,9 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerWidgets.name"]
-                    display_fields: ["footerWidgets.label"]
-                    value_field: "footerWidgets.name"
+                    search_fields: ["footerWidgets.*.name"]
+                    display_fields: ["footerWidgets.*.label"]
+                    value_field: "footerWidgets.*.name"
                     required: false
               - label: "Column 4"
                 name: "footerColumn4"
@@ -150,8 +148,8 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerWidgets.name"]
-                    display_fields: ["footerWidgets.label"]
-                    value_field: "footerWidgets.name"
+                    search_fields: ["footerWidgets.*.name"]
+                    display_fields: ["footerWidgets.*.label"]
+                    value_field: "footerWidgets.*.name"
                     required: false
                   
