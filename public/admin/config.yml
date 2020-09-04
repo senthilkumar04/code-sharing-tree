@@ -49,13 +49,15 @@ collections:
           - {label: Logo alternate title, name: logoAltTitle, widget: string}
       - label: "Footer Settings"
         name: "footer-settings"
-        files:
+        file: "content/settings/footer.md"
+        fields:
           - label: "Social Widget"
-            name: "social-widget"
-            file: "content/settings/footer/social.md"
+            name: "socialWidget"
+            widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string}
-              - {label: Facebook URL, name: facebookUrl, widget: string}
-              - {label: Instagram URL, name: instagramUrl, widget: string}
-              - {label: Twitter URL, name: twitterUrl, widget: string}
+              - {label: Widget Title, name: widgetTitle, widget: string, default: "We are social"}
+              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+              - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
+              - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
+              - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
 
