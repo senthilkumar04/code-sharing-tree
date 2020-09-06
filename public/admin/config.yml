@@ -92,6 +92,11 @@ collections:
                   - {label: Link 3 url, name: link3Value, widget: string, required: false}
                   - {label: Link 4 label, name: link4Label, widget: string, required: false}
                   - {label: Link 4 url, name: link4Value, widget: string, required: false}
+          - label: "Footer test relation"
+            name: "footerTestRelation"
+            widget: list
+            allow_add: true
+            field: {label: List item title, name: listItemTitke, widget: string}
           - label: "Footer column layout"
             name: "footerColumnLayout"
             widget: object
@@ -105,9 +110,9 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerWidgets"]
-                    display_fields: ["footerWidgets"]
-                    value_field: "footerWidgets"
+                    search_fields: ["footerTestRelation"]
+                    display_fields: ["footerTestRelation"]
+                    value_field: "footerTestRelation"
                     required: false
               - label: "Column 2"
                 name: "footerColumn2"
@@ -144,8 +149,8 @@ collections:
                     widget: "relation"
                     collection: "settings"
                     file: "footerSettings"
-                    search_fields: ["footerWidgets"]
-                    display_fields: ["footerWidgets"]
-                    value_field: "footerWidgets"
+                    search_fields: ["footerWidgets.*.name"]
+                    display_fields: ["footerWidgets.*.label"]
+                    value_field: "footerWidgets.*.name"
                     required: false
                   
