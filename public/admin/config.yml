@@ -20,8 +20,8 @@ collections:
           fields:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
-  - label: "Menu"
-    name: "menu"
+  - label: "Menus"
+    name: "menus"
     folder: "content/menus"
     create: true
     identifier_field: name
@@ -108,11 +108,10 @@ collections:
                   - label: "Column 1 widget"
                     name: "column1Widget"
                     widget: "relation"
-                    collection: "settings"
-                    file: "footerSettings"
-                    search_fields: ["footerTestRelation"]
-                    display_fields: ["footerTestRelation"]
-                    value_field: "footerTestRelation"
+                    collection: "menus"
+                    search_fields: ["title"]
+                    display_fields: ["title"]
+                    value_field: "title"
                     required: false
               - label: "Column 2"
                 name: "footerColumn2"
