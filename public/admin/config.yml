@@ -24,7 +24,6 @@ collections:
     name: "menus"
     folder: "content/menus"
     create: true
-    identifier_field: name
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Accessible Title", name: "srTitle", widget: "string"}
@@ -112,7 +111,6 @@ collections:
                     search_fields: ["title"]
                     display_fields: ["title"]
                     value_field: "title"
-                    required: false
               - label: "Column 2"
                 name: "footerColumn2"
                 widget: object
