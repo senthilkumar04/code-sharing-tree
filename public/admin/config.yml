@@ -22,7 +22,7 @@ collections:
             - { label: 'Description', name: 'description', widget: 'text'}
   - name: 'menus'
     label: 'Menus'
-    folder: 'content/_menus'
+    folder: 'contents/_menus'
     create: true
     fields:
       - {label: 'Menu Title', name: 'title', widget: 'string'}
@@ -33,7 +33,7 @@ collections:
       - {label: 'Menu Order', name: 'menu_order', widget: 'number'}
   - name: 'testRelation'
     label: 'Test relation'
-    folder: 'content/test'
+    folder: 'contents/test'
     create: true
     fields:
       - {label: 'Test Title', name: 'title', widget: 'string'}
@@ -50,12 +50,12 @@ collections:
     files:
       - label: 'General Settings'
         name: 'generalSettings'
-        file: 'content/settings/general.md'
+        file: 'contents/settings/general.md'
         fields:
           - {label: 'Website title', name: 'site_title', widget: 'string'}
           - {label: Logo alternate title, name: logo_alt_Title, widget: string}
       - label: 'Footer Settings'
         name: 'footerSettings'
-        file: 'content/settings/footer.md'
+        file: 'contents/settings/footer.md'
         fields:
           - {label: 'Footer title', name: 'site_title', widget: 'string'}
