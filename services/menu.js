@@ -5,7 +5,13 @@ const fs = require("fs");
 
 export const getNavigationMenuList = () => {
   const menuContentBaseURL = `contents/_menus`;
-  const menuFiles = fs.readdirSync(`${process.cwd()}/${menuContentBaseURL}`);
+  let menuFiles = [];
+  try {
+    menuFiles = fs.readdirSync(`${process.cwd()}/${menuContentBaseURL}`);
+  }
+  catch(error) {
+    console.log("**** No navigation menu items available *****");
+  }
   return _.sortBy(menuFiles.map(fileName => {
     const menuMarkdown = fs
       .readFileSync(`${menuContentBaseURL}/${fileName}`)
