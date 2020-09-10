@@ -16,14 +16,14 @@ export const getNavigationMenuList = () => {
 };
 
 const mapMenuData = (menu) => {
-    const { title: menuTitle, srTitle = '', menuUrl = '', menuInline = false, menuSpecial = false, menuOrder = 0 } = menu;
+    const { title, sr_title = '', menu_url = '', menu_inline = false, menu_special = false, menu_order = 0 } = menu;
     return {
-        id: `nav-${menuUrl}`,
-        label: menuTitle,
-        srLabel: srTitle,
-        isInline: menuInline,
-        isSpecial: menuSpecial,
-        link: menuUrl,
-        order: menuOrder
+        id: `nav-${menu_url}`,
+        label: title,
+        srLabel: sr_title,
+        isInline: menu_inline,
+        isSpecial: menu_special,
+        link: menu_url,
+        order: menu_order
     }
 };
