@@ -22,13 +22,21 @@ const MenuListDrawer = ({ menus, openDrawer, toggleDrawer, anchor }) => {
           <Typography variant="subtitle2" align="center">"Giving is the greatest act of grace."</Typography>
         </StyledQuoteBox>
         <List>
-          {menus.map((menu) => (
-            <Link href={menu.link} key={menu.id}>
-              <ListItem button>
-                <ListItemText primary={menu.label} />
-              </ListItem>
-            </Link>
-          ))}
+          {
+            menus.map((menu) => {
+              const { id, label, srLabel, isInline, link } = menu;
+              const menuUrl = isInline ? `#${link}` : `/${link}`;
+              return (
+                <Link href={menuUrl} key={id}>
+                  <ListItem button>
+                    <ListItemText>
+                      <Typography aria-label={srLabel} variant="body1">{label}</Typography>
+                    </ListItemText>
+                  </ListItem>
+                </Link>
+              )
+            })
+          }
         </List>
       </StyledMenuDrawerBox>
     </Drawer>
@@ -41,6 +49,9 @@ MenuListDrawer.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         srLabel: PropTypes.string.isRequired,
+        isInline: PropTypes.bool.isRequired,
+        isSpecial: PropTypes.bool.isRequired,
+        link: PropTypes.string.isRequired,
       })
     ).isRequired,
     openDrawer: PropTypes.bool.isRequired,

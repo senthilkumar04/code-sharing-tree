@@ -31,6 +31,20 @@ collections:
       - {label: 'Is menu inline ?', name: 'menu_inline', widget: 'boolean', default: true}
       - {label: 'Is menu special ?', name: 'menu_special', widget: 'boolean', default: false, required: false}
       - {label: 'Menu Order', name: 'menu_order', widget: 'number'}
+  - name: 'testRelation'
+    label: 'Test relation'
+    folder: 'content/test'
+    create: true
+    fields:
+      - {label: 'Test Title', name: 'title', widget: 'string'}
+      - label: 'Relation widget'
+        name: 'menuRelation'
+        widget:
+            'relation'
+        collection: 'menus'
+        value_field: 'title'
+        search_fields: ['title']
+        display_fields: ['title']
   - name: 'settings'
     label: 'Settings'
     files:
@@ -44,9 +58,4 @@ collections:
         name: 'footerSettings'
         file: 'content/settings/footer.md'
         fields:
-          - label: 'Test relation'
-            name: 'relationTest'
-            widget: 'relation'
-            collection: 'menus'
-            value_field: 'title'
-            search_fields: ['title']
+          - {label: 'Footer title', name: 'site_title', widget: 'string'}

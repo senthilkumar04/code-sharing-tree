@@ -24,8 +24,9 @@ export const StyledLogoTitle = styled(Typography)(({ theme }) => {
     }
 })
 
-export const StyledMenuItem = styled(ButtonBase)(({ theme, isspecial = false }) => {
-    if(isspecial) {
+export const StyledMenuItem = styled(ButtonBase)(({ theme, menu }) => {
+    const { isSpecial = false } = menu;
+    if(isSpecial) {
         return {
             color: theme.palette.common.white,
             backgroundColor: theme.palette.primary.main,
