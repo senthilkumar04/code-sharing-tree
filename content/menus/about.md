@@ -1,9 +1,9 @@
 ---
-title: About Us
-srTitle: Tap to scroll to the about us section
-menuUrl: about-us
-menuInline: true
-menuSpecial: false
-menuOrder: 1
+menu_title: About us
+sr_title: About us. Tap to scroll to that section
+menu_url: about-us
+menu_inline: true
+menu_special: false
+menu_order: 1
 ---
 
