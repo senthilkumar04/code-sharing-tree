@@ -16,7 +16,7 @@ export const getNavigationMenuList = () => {
 };
 
 const mapMenuData = (menu) => {
-    const { title, sr_title = '', menu_url = '', menu_inline = false, menu_special = false, menu_order = 0 } = menu;
+    const { title = '', sr_title = '', menu_url = '', menu_inline = false, menu_special = false, menu_order = 0 } = menu;
     return {
         id: `nav-${menu_url}`,
         label: title,
