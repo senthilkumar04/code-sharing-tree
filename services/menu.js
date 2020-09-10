@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 const fs = require("fs");
 
 export const getNavigationMenuList = () => {
-  const menuContentBaseURL = `content/menus`;
+  const menuContentBaseURL = `content/_menus`;
   const menuFiles = fs.readdirSync(`${process.cwd()}/${menuContentBaseURL}`);
   return _.sortBy(menuFiles.map(fileName => {
     const menuMarkdown = fs

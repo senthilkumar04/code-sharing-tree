@@ -22,7 +22,7 @@ collections:
             - { label: 'Description', name: 'description', widget: 'text'}
   - name: 'menus'
     label: 'Menus'
-    folder: 'content/menus'
+    folder: 'content/_menus'
     create: true
     fields:
       - {label: 'Menu Title', name: 'title', widget: 'string'}
