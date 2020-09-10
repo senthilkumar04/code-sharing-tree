@@ -1,50 +1,52 @@
 backend:
   name: git-gateway
   branch: master
-local_backend: true
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.md"
+    - label: 'Home'
+      name: 'home'
+      file: 'content/home.md'
       fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
+        - { label: 'Title', name: 'title', widget: 'string'}
+        - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+        - { label: 'Body', name: 'body', widget: 'markdown'}
         - label: 'Cats'
-          name: "cats"
+          name: 'cats'
           widget: list
           fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
-  - name: "menus"
-    label: "Menus"
-    folder: "content/menus"
+            - { label: 'Name', name: 'name', widget: 'string'}
+            - { label: 'Description', name: 'description', widget: 'text'}
+  - name: 'menus'
+    label: 'Menus'
+    folder: 'content/menus'
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Accessible Title", name: "srTitle", widget: "string"}
-      - {label: "Menu URL", name: "menuUrl", widget: "string"}
-      - {label: "Is menu inline ?", name: "menuInline", widget: "boolean", default: true}
-      - {label: "Is menu special ?", name: "menuSpecial", widget: "boolean", default: false, required: false}
-      - {label: "Menu Order", name: "menuOrder", widget: "number"}
-  - name: "settings"
-    label: "Settings"
+      - {label: 'Menu Title', name: 'menu_title', widget: 'string'}
+      - {label: 'Menu Screen reader Title', name: 'sr_title', widget: 'string'}
+      - {label: 'Menu URL', name: 'menu_url', widget: 'string'}
+      - {label: 'Is menu inline ?', name: 'menu_inline', widget: 'boolean', default: true}
+      - {label: 'Is menu special ?', name: 'menu_special', widget: 'boolean', default: false, required: false}
+      - {label: 'Menu Order', name: 'menu_order', widget: 'number'}
+  - name: 'settings'
+    label: 'Settings'
     files:
-      - label: "General Settings"
-        name: "generalSettings"
-        file: "content/settings/general.md"
+      - label: 'General Settings'
+        name: 'generalSettings'
+        file: 'content/settings/general.md'
         fields:
-          - {label: "Website title", name: "siteTitle", widget: "string"}
-          - {label: Logo alternate title, name: logoAltTitle, widget: string}
-      - label: "Footer Settings"
-        name: "footerSettings"
-        file: "content/settings/footer.md"
+          - {label: 'Website title', name: 'site_title', widget: 'string'}
+          - {label: Logo alternate title, name: logo_alt_Title, widget: string}
+      - label: 'Footer Settings'
+        name: 'footerSettings'
+        file: 'content/settings/footer.md'
         fields:
-          - {label: "Column 1 widget", name: "column1Widget", widget: "relation", collection: "menus", search_fields: ["title"], value_field: "title"}
-  
-              
+          - label: 'Test relation'
+            name: 'relationTest'
+            widget: 'relation'
+            collection: 'menus'
+            value_field: 'menu_title'
+            search_fields: ['menu_title']
