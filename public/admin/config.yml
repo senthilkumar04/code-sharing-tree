@@ -25,7 +25,7 @@ collections:
     folder: 'content/menus'
     create: true
     fields:
-      - {label: 'Menu Title', name: 'menu_title', widget: 'string'}
+      - {label: 'Menu Title', name: 'title', widget: 'string'}
       - {label: 'Menu Screen reader Title', name: 'sr_title', widget: 'string'}
       - {label: 'Menu URL', name: 'menu_url', widget: 'string'}
       - {label: 'Is menu inline ?', name: 'menu_inline', widget: 'boolean', default: true}
@@ -48,5 +48,5 @@ collections:
             name: 'relationTest'
             widget: 'relation'
             collection: 'menus'
-            value_field: 'menu_title'
-            search_fields: ['menu_title']
+            value_field: 'title'
+            search_fields: ['title']
