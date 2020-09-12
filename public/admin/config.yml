@@ -59,4 +59,61 @@ collections:
         name: 'footerSettings'
         file: 'contents/settings/footer.md'
         fields:
-          - {label: 'Footer title', name: 'site_title', widget: 'string'}
+          - label: 'Footer Widgets'
+            name: 'footerWidgets'
+            widget: object
+            fields:
+              - label: 'Social Widget'
+                name: 'socialWidget'
+                widget: object
+                fields:
+                  - {label: Widget Title, name: widgetTitle, widget: string}
+                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+                  - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
+                  - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
+                  - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
+              - label: 'Reach us Widget'
+                name: 'reachUsWidget'
+                widget: object
+                fields:
+                  - {label: Widget Title, name: widgetTitle, widget: string}
+                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+                  - {label: Organisation Name, name: orgName, widget: string, required: true}
+                  - {label: Address line 1 URL, name: addressLine1, widget: string, required: true}
+                  - {label: Address line 2 URL, name: addressLine2, widget: string, required: false}
+                  - {label: City, name: cityName, widget: string, required: true}
+                  - {label: State, name: stateName, widget: string, required: true}
+                  - {label: Pincode, name: pincode, widget: string, required: true}
+                  - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
+                  - {label: Contact phone number, name: phoneNumber, widget: string, required: false }
+              - label: 'Quick links Widget'
+                name: 'quickLinkWidget'            
+                widget: object
+                fields:
+                  - {label: Widget Title, name: widgetTitle, widget: string, default: 'We are social'}
+                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+                  - {label: Link 1 label, name: link1Label, widget: string, required: false}
+                  - {label: Link 1 url, name: link1Value, widget: string, required: false}
+                  - {label: Link 2 label, name: link2Label, widget: string, required: false}
+                  - {label: Link 2 url, name: link2Value, widget: string, required: false}
+                  - {label: Link 3 label, name: link3Label, widget: string, required: false}
+                  - {label: Link 3 url, name: link3Value, widget: string, required: false}
+                  - {label: Link 4 label, name: link4Label, widget: string, required: false}
+                  - {label: Link 4 url, name: link4Value, widget: string, required: false}
+          - label: 'Footer Column Layout'
+            name: 'footerColumnLayout'
+            widget: object
+            fields:
+              - label: 'Column 1 Widget'
+                name: 'column1Widget'
+                widget:
+                    relation
+                collection: 'settings'
+                file: 'footerSettings'
+                valueField: 'footerWidgets.*.widgetTitle'
+                searchFields: ['footerWidgets.*.widgetTitle']
+                displayFields: ['footerWidgets.*.widgetTitle']
+            
+                
+
+
