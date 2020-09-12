@@ -12,7 +12,7 @@ import Container from "@material-ui/core/Container";
 import { getNavigationMenuList } from '../services/menu';
 
 /** Contents imports */
-import { attributes, react as HomeContent } from "../contents/home.md";
+import { attributes, react as HomeContent } from "../../contents/home.md";
 
 export default function Home(props)  {
   let { title, cats } = attributes;
