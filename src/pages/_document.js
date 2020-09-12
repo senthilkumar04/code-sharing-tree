@@ -11,7 +11,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <body>
           <Main />
