@@ -1,35 +1,32 @@
 import matter from "gray-matter";
-import * as _ from 'lodash';
 
 const fs = require("fs");
 
 export const getNavigationMenuList = () => {
-  const menuContentBaseURL = `contents/_menus`;
-  let menuFiles = [];
+  const menusFileURL = `contents/settings/menus.md`;
+  let menuListMarkdown = [],
+      menuList = [];
   try {
-    menuFiles = fs.readdirSync(`${process.cwd()}/${menuContentBaseURL}`);
+    menuListMarkdown = fs.readFileSync(`${menusFileURL}`).toString();
+    const { data: { headerMenuNavigation = [] } } = matter(menuListMarkdown);
+    menuList = headerMenuNavigation.map((menu) => {
+      return mapMenuData(menu);
+    })
   }
   catch(error) {
-    console.log("**** No navigation menu items available *****");
+    console.log("**** No header navigation menu items available *****");
   }
-  return _.sortBy(menuFiles.map(fileName => {
-    const menuMarkdown = fs
-      .readFileSync(`${menuContentBaseURL}/${fileName}`)
-      .toString();
-    const { data: menuData } = matter(menuMarkdown);
-    return mapMenuData(menuData);
-  }), ['order']);
+  return menuList;
 };
 
 const mapMenuData = (menu) => {
-    const { title = '', sr_title = '', menu_url = '', menu_inline = false, menu_special = false, menu_order = 0 } = menu;
+    const { title = '', srTitle = '', url = '', inline = false, special = false } = menu;
     return {
-        id: `nav-${menu_url}`,
+        id: `nav-${url}`,
         label: title,
-        srLabel: sr_title,
-        isInline: menu_inline,
-        isSpecial: menu_special,
-        link: menu_url,
-        order: menu_order
+        srLabel: srTitle,
+        isInline: inline,
+        isSpecial: special,
+        link: url,
     }
 };

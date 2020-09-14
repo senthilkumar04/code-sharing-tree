@@ -21,17 +21,6 @@ collections:
           fields:
             - {label: 'Name', name: 'name', widget: 'string'}
             - {label: 'Description', name: 'description', widget: 'text'}
-  - name: 'menus'
-    label: 'Menus'
-    folder: 'contents/_menus'
-    create: true
-    fields:
-      - {label: 'Menu Title', name: 'title', widget: 'string'}
-      - {label: 'Menu Screen reader Title', name: 'sr_title', widget: 'string'}
-      - {label: 'Menu URL', name: 'menu_url', widget: 'string'}
-      - {label: 'Is menu inline ?', name: 'menu_inline', widget: 'boolean', default: true}
-      - {label: 'Is menu special ?', name: 'menu_special', widget: 'boolean', default: false, required: false}
-      - {label: 'Menu Order', name: 'menu_order', widget: 'number'}
   - name: 'settings'
     label: 'Settings'
     files:
@@ -41,99 +30,57 @@ collections:
         fields:
           - {label: 'Website title', name: 'site_title', widget: 'string'}
           - {label: Logo alternate title, name: logo_alt_Title, widget: string}
-          - label: 'Footer Column Layout'
-            name: 'footerColumnLayout'
-            widget: object
-            fields:
-              - label: 'Column 1 Widget'
-                name: 'column1Widget'
-                widget:
-                    relation
-                collection: 'settings'
-                file: 'widgets'
-                valueField: 'widgetList.*.id'
-                searchFields: ['widgetList.*.title']
-                displayFields: ['widgetList.*.title']
-                required: false
-              - label: 'Column 2 Widget'
-                name: 'column2Widget'
-                widget:
-                    relation
-                collection: 'settings'
-                file: 'widgets'
-                valueField: 'widgetList.*.id'
-                searchFields: ['widgetList.*.title']
-                displayFields: ['widgetList.*.title']
-                required: false
-              - label: 'Column 3 Widget'
-                name: 'column3Widget'
-                widget:
-                    relation
-                collection: 'settings'
-                file: 'widgets'
-                valueField: 'widgetList.*.id'
-                searchFields: ['widgetList.*.title']
-                displayFields: ['widgetList.*.title']
-                required: false
-              - label: 'Column 4 Widget'
-                name: 'column4Widget'
-                widget:
-                    relation
-                collection: 'settings'
-                file: 'widgets'
-                valueField: 'widgetList.*.id'
-                searchFields: ['widgetList.*.title']
-                displayFields: ['widgetList.*.title']
-                required: false
       - label: 'Widgets'
         name: 'widgets'
-        file: 'contents/settings/widget.md'
+        file: 'contents/settings/widgets.md'
         fields:
-          - label: 'Widgets Group'
-            name: 'widgetsGroup'
+          - label: 'Social Widget'
+            name: 'socialWidget'
             widget: object
             fields:
-              - label: 'Social Widget'
-                name: 'socialWidget'
-                widget: object
-                fields:
-                  - {label: Widget Title, name: widgetTitle, widget: string}
-                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-                  - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
-                  - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
-                  - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
-              - label: 'Reach us Widget'
-                name: 'reachUsWidget'
-                widget: object
-                fields:
-                  - {label: Widget Title, name: widgetTitle, widget: string}
-                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-                  - {label: Organisation Name, name: orgName, widget: string, required: true}
-                  - {label: Address line 1 URL, name: addressLine1, widget: string, required: true}
-                  - {label: Address line 2 URL, name: addressLine2, widget: string, required: false}
-                  - {label: City, name: cityName, widget: string, required: true}
-                  - {label: State, name: stateName, widget: string, required: true}
-                  - {label: Pincode, name: pincode, widget: string, required: true}
-                  - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
-                  - {label: Contact phone number, name: phoneNumber, widget: string, required: false }
-              - label: 'Quick links Widget'
-                name: 'quickLinkWidget'            
-                widget: object
-                fields:
-                  - {label: Widget Title, name: widgetTitle, widget: string, default: 'We are social'}
-                  - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-                  - {label: Link 1 label, name: link1Label, widget: string, required: false}
-                  - {label: Link 1 url, name: link1Value, widget: string, required: false}
-                  - {label: Link 2 label, name: link2Label, widget: string, required: false}
-                  - {label: Link 2 url, name: link2Value, widget: string, required: false}
-                  - {label: Link 3 label, name: link3Label, widget: string, required: false}
-                  - {label: Link 3 url, name: link3Value, widget: string, required: false}
-                  - {label: Link 4 label, name: link4Label, widget: string, required: false}
-                  - {label: Link 4 url, name: link4Value, widget: string, required: false}
-          - label: 'Widget list'
-            name: 'widgetList'
-            widget:
-                list
+              - {label: Widget Title, name: widgetTitle, widget: string}
+              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+              - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
+              - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
+              - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
+          - label: 'Reach us Widget'
+            name: 'reachUsWidget'
+            widget: object
             fields:
-              - {label: 'Widget title', name: 'title', widget: string}
-              - {label: 'Widget identifier', name: 'id', widget: string, hint: 'Type the widget name'}
+              - {label: Widget Title, name: widgetTitle, widget: string}
+              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+              - {label: Organisation Name, name: orgName, widget: string, required: true}
+              - {label: Address line 1 URL, name: addressLine1, widget: string, required: true}
+              - {label: Address line 2 URL, name: addressLine2, widget: string, required: false}
+              - {label: City, name: cityName, widget: string, required: true}
+              - {label: State, name: stateName, widget: string, required: true}
+              - {label: Pincode, name: pincode, widget: string, required: true}
+              - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
+              - {label: Contact phone number, name: phoneNumber, widget: string, required: false }
+          - label: 'Quick links Widget'
+            name: 'quickLinkWidget'            
+            widget: object
+            fields:
+              - {label: Widget Title, name: widgetTitle, widget: string, default: 'We are social'}
+              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
+              - label: 'Links list'
+                name: 'linkslist'
+                widget:
+                    'list'
+                fields: 
+                  - {label: 'Link title', name: 'title', widget: string, required: false}
+                  - {label: 'Link url', name: 'url', widget: string, required: false}
+      - label: 'Menus'
+        name: 'menus'
+        file: 'contents/settings/menus.md'
+        fields:
+          - label: 'Header navigation menu'
+            name: 'headerMenuNavigation'
+            widget:
+                'list'
+            fields:
+              - {label: 'Menu Title', name: 'title', widget: 'string'}
+              - {label: 'Menu Screen reader Title', name: 'srTitle', widget: 'string'}
+              - {label: 'Menu URL', name: 'url', widget: 'string'}
+              - {label: 'Is menu inline ?', name: 'inline', widget: 'boolean', default: true}
+              - {label: 'Is menu special ?', name: 'special', widget: 'boolean', default: false, required: false}
