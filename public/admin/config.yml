@@ -12,15 +12,15 @@ collections:
       name: 'home'
       file: 'contents/home.md'
       fields:
-        - { label: 'Title', name: 'title', widget: 'string'}
-        - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-        - { label: 'Body', name: 'body', widget: 'markdown'}
+        - {label: 'Title', name: 'title', widget: 'string'}
+        - {label: 'Publish Date', name: 'date', widget: 'datetime' }
+        - {label: 'Body', name: 'body', widget: 'markdown'}
         - label: 'Cats'
           name: 'cats'
           widget: list
           fields:
-            - { label: 'Name', name: 'name', widget: 'string'}
-            - { label: 'Description', name: 'description', widget: 'text'}
+            - {label: 'Name', name: 'name', widget: 'string'}
+            - {label: 'Description', name: 'description', widget: 'text'}
   - name: 'menus'
     label: 'Menus'
     folder: 'contents/_menus'
@@ -32,35 +32,65 @@ collections:
       - {label: 'Is menu inline ?', name: 'menu_inline', widget: 'boolean', default: true}
       - {label: 'Is menu special ?', name: 'menu_special', widget: 'boolean', default: false, required: false}
       - {label: 'Menu Order', name: 'menu_order', widget: 'number'}
-  - name: 'testRelation'
-    label: 'Test relation'
-    folder: 'contents/test'
-    create: true
-    fields:
-      - {label: 'Test Title', name: 'title', widget: 'string'}
-      - label: 'Relation widget'
-        name: 'menuRelation'
-        widget:
-            'relation'
-        collection: 'menus'
-        valueField: 'title'
-        searchFields: ['title']
-        displayFields: ['title']
   - name: 'settings'
     label: 'Settings'
     files:
-      - label: 'General Settings'
+      - label: 'General'
         name: 'generalSettings'
         file: 'contents/settings/general.md'
         fields:
           - {label: 'Website title', name: 'site_title', widget: 'string'}
           - {label: Logo alternate title, name: logo_alt_Title, widget: string}
-      - label: 'Footer Settings'
-        name: 'footerSettings'
-        file: 'contents/settings/footer.md'
+          - label: 'Footer Column Layout'
+            name: 'footerColumnLayout'
+            widget: object
+            fields:
+              - label: 'Column 1 Widget'
+                name: 'column1Widget'
+                widget:
+                    relation
+                collection: 'settings'
+                file: 'widgets'
+                valueField: 'widgetList.*.id'
+                searchFields: ['widgetList.*.title']
+                displayFields: ['widgetList.*.title']
+                required: false
+              - label: 'Column 2 Widget'
+                name: 'column2Widget'
+                widget:
+                    relation
+                collection: 'settings'
+                file: 'widgets'
+                valueField: 'widgetList.*.id'
+                searchFields: ['widgetList.*.title']
+                displayFields: ['widgetList.*.title']
+                required: false
+              - label: 'Column 3 Widget'
+                name: 'column3Widget'
+                widget:
+                    relation
+                collection: 'settings'
+                file: 'widgets'
+                valueField: 'widgetList.*.id'
+                searchFields: ['widgetList.*.title']
+                displayFields: ['widgetList.*.title']
+                required: false
+              - label: 'Column 4 Widget'
+                name: 'column4Widget'
+                widget:
+                    relation
+                collection: 'settings'
+                file: 'widgets'
+                valueField: 'widgetList.*.id'
+                searchFields: ['widgetList.*.title']
+                displayFields: ['widgetList.*.title']
+                required: false
+      - label: 'Widgets'
+        name: 'widgets'
+        file: 'contents/settings/widget.md'
         fields:
-          - label: 'Footer Widgets'
-            name: 'footerWidgets'
+          - label: 'Widgets Group'
+            name: 'widgetsGroup'
             widget: object
             fields:
               - label: 'Social Widget'
@@ -100,20 +130,10 @@ collections:
                   - {label: Link 3 url, name: link3Value, widget: string, required: false}
                   - {label: Link 4 label, name: link4Label, widget: string, required: false}
                   - {label: Link 4 url, name: link4Value, widget: string, required: false}
-          - label: 'Footer Column Layout'
-            name: 'footerColumnLayout'
-            widget: object
+          - label: 'Widget list'
+            name: 'widgetList'
+            widget:
+                list
             fields:
-              - label: 'Column 1 Widget'
-                name: 'column1Widget'
-                widget:
-                    relation
-                collection: 'settings'
-                file: 'footerSettings'
-                valueField: 'footerWidgets.*.widgetTitle'
-                searchFields: ['footerWidgets.*.widgetTitle']
-                displayFields: ['footerWidgets.*.widgetTitle']
-            
-                
-
-
+              - {label: 'Widget title', name: 'title', widget: string}
+              - {label: 'Widget identifier', name: 'id', widget: string, hint: 'Type the widget name'}
