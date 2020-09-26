@@ -34,7 +34,7 @@ widgetList:
   - title: Quick links Widget
     id: quickLinkWidget
 socialWidget:
-  widgetTitle: We are social
+  widgetTitle: We are social updated
   widgetEnable: true
   facebookUrl: "#"
   instagramUrl: "#"
