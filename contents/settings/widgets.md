@@ -1,6 +1,6 @@
 ---
 socialWidget:
-  widgetTitle: We are social updated
+  widgetTitle: We are social
   widgetEnable: true
   facebookUrl: "#"
   instagramUrl: "#"
