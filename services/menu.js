@@ -1,6 +1,5 @@
 import matter from "gray-matter";
-
-const fs = require("fs");
+import fs from "fs";
 
 export const getNavigationMenuList = () => {
   const menusFileURL = `contents/settings/menus.md`;

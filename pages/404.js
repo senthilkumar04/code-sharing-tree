@@ -11,11 +11,11 @@ import { getFooterWidgets } from '../services/footer';
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
-class Donate extends Component {
+class App404 extends Component {
     render() {
         return (
             <Container>
-                <Typography>Donate</Typography>
+                <Typography>App404</Typography>
             </Container>
         );
     }
@@ -32,4 +32,4 @@ export async function getStaticProps() {
     }
   }
 
-export default Donate;
+export default App404;
