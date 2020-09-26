@@ -13,7 +13,7 @@ import { getNavigationMenuList } from '../services/menu';
 import { getFooterWidgets } from '../services/footer';
 
 /** Contents imports */
-import { attributes, react as HomeContent } from "../contents/home.md";
+import { attributes, react as HomeContent } from "../../contents/home.md";
 
 export default function Home(props)  {
   let { title, cats } = attributes;
