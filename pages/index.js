@@ -10,6 +10,7 @@ import Container from "@material-ui/core/Container";
 
 /** Services imports */
 import { getNavigationMenuList } from '../services/menu';
+import { getFooterWidgets } from '../services/footer';
 
 /** Contents imports */
 import { attributes, react as HomeContent } from "../contents/home.md";
@@ -37,9 +38,11 @@ export default function Home(props)  {
 
 export async function getStaticProps() {
   const menus = getNavigationMenuList();
+  const footerWidgets = getFooterWidgets();
   return {
     props: {
-      menus
+      menus,
+      footerWidgets
     }
   }
 }
