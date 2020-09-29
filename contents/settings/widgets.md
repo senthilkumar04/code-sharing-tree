@@ -17,7 +17,7 @@ reachUsWidget:
   emailAddress: sharing.tree@gmail.com
   stateName: Tamil Nadu
 quickLinkWidget:
-  widgetTitle: Important link
+  widgetTitle: Important links
   widgetEnable: true
   linkslist:
     - title: FAQ
