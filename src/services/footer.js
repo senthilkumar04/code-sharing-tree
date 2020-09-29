@@ -20,7 +20,6 @@ export const getFooterWidgets = () => {
   } catch (error) {
     console.log("**** No header navigation menu items available *****");
   }
-  console.log("footer data", footerWidgets);
   return footerWidgets;
 };
 
