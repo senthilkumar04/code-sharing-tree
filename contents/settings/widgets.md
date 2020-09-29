@@ -2,7 +2,7 @@
 socialWidget:
   widgetTitle: We are social
   widgetEnable: true
-  facebookUrl: "#"
+  facebookUrl: https://www.facebook.com/Sharing-Tree-The-Trust-763453263684730/
   instagramUrl: "#"
   twitterUrl: "#"
 reachUsWidget:
