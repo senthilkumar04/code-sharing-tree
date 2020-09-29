@@ -5,9 +5,9 @@ import Grid from '@material-ui/core/Grid';
 
 import {StyledFooter, StyledCopyRightsBox, StyledFooterWidgetsBox} from './footer.styles';
 
-import ReachUsWidget from '../widgets/ReachUsWidget';
-import SocialLinksWidget from '../widgets/SocialLinks';
-import ImportantLinksWidget from '../widgets/ImportantLinks';
+import ReachUsWidget from '../widgets/reach-us/ReachUsWidget';
+import SocialLinksWidget from '../widgets/social-links/SocialLinks';
+import ImportantLinksWidget from '../widgets/important-links/ImportantLinks';
 
 import { WIDGETS } from '../../utils/constants';
 
