@@ -14,9 +14,9 @@ const SocialLinksWidget = ({ data }) => {
         <Fragment>
             <Typography variant="subtitle2" component="h2" color="primary">{_.toUpper(widgetTitle)}</Typography>
             <Box my={2} display="flex" flexDirection="row" justifyContent="flex-start">
-                <Box mr={1}><Link href={facebookUrl} target="_blank"><FacebookIcon/></Link></Box>
-                <Box mr={1}><Link href={instagramUrl} target="_blank"><InstagramIcon/></Link></Box>
-                <Box mr={1}><Link href={twitterUrl} target="_blank"><TwitterIcon/></Link></Box>
+                <Box mr={1}><Link href={facebookUrl} target="_blank" rel="noreferrer"><FacebookIcon/></Link></Box>
+                <Box mr={1}><Link href={instagramUrl} target="_blank" rel="noreferrer"><InstagramIcon/></Link></Box>
+                <Box mr={1}><Link href={twitterUrl} target="_blank" rel="noreferrer"><TwitterIcon/></Link></Box>
             </Box>
         </Fragment>
     );

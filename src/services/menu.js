@@ -13,7 +13,7 @@ export const getNavigationMenuList = () => {
     })
   }
   catch(error) {
-    console.log("**** No header navigation menu items available *****");
+    console.log("**** Error: No header navigation menu items available *****");
   }
   return menuList;
 };

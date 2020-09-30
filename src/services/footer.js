@@ -18,7 +18,7 @@ export const getFooterWidgets = () => {
     const { data } = matter(widgetsMarkdown);
     footerWidgets = mapFooterWidgets(data);
   } catch (error) {
-    console.log("**** No header navigation menu items available *****");
+    console.log("**** Error: No footer widgets items available *****");
   }
   return footerWidgets;
 };

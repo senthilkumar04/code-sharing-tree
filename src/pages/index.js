@@ -1,5 +1,5 @@
 /** Core imports */
-import React from "react";
+import React, { Fragment } from "react";
 
 /** Layouts imports */
 
@@ -7,42 +7,35 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 
 /** Components imports */
+import Subscription from '../components/subscription';
 
 /** Services imports */
 import { getNavigationMenuList } from '../services/menu';
 import { getFooterWidgets } from '../services/footer';
+import { getSubscriptionDetails } from '../services/subscription';
 
 /** Contents imports */
 import { attributes, react as HomeContent } from "../../contents/home.md";
 
 export default function Home(props)  {
   let { title, cats } = attributes;
+  const { subscription } = props;
   return (
-    <Container>
-      <article>
-        <h1>{title}</h1>
-        <HomeContent />
-        <ul>
-          {cats.map((cat, k) => (
-            <li key={k}>
-              <h2>{cat.name}</h2>
-              <p>{cat.description}</p>
-            </li>
-          ))}
-        </ul>
-        <div id="our-stories">It works</div>
-      </article>
-    </Container>
+    <Fragment>
+      <Subscription data={subscription}/>
+    </Fragment>
   );
 }
 
 export async function getStaticProps() {
   const menus = getNavigationMenuList();
   const footerWidgets = getFooterWidgets();
+  const subscription = getSubscriptionDetails();
   return {
     props: {
       menus,
-      footerWidgets
+      footerWidgets,
+      subscription
     }
   }
 }
