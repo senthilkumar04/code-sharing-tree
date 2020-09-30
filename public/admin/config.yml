@@ -84,3 +84,17 @@ collections:
               - {label: 'Menu URL', name: 'url', widget: 'string'}
               - {label: 'Is menu inline ?', name: 'inline', widget: 'boolean', default: true}
               - {label: 'Is menu special ?', name: 'special', widget: 'boolean', default: false, required: false}
+      - label: 'Subscription'
+        name: 'subscription'
+        file: 'contents/settings/subscription.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subscribe button label', name: 'subscribeBtnLabel', widget: 'string'}
+          - label: "Featured Image"
+            name: "thumbnail"
+            widget: "image"
+            default: "/img/newletter-background.png"
+            media_library:
+              config:
+                multiple: false
+          
