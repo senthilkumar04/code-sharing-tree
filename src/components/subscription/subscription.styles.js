@@ -2,11 +2,12 @@ import { styled } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 
-export const StyledSubscriptionContainer = styled(Container)(({ theme, backgroundpatternimage }) => {
+export const StyledSubscriptionContainer = styled(Container)(({ theme, bgdata }) => {
+    const { backgroundImage, isBackgroundPattern } = bgdata;
     return {
-        backgroundRepeat: 'repeat',
+        backgroundRepeat: isBackgroundPattern ? 'repeat' : 'no-repeat',
         backgroundPosition: 'center',
-        backgroundImage: backgroundpatternimage ? `url(${backgroundpatternimage})` : null,
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -19,8 +20,12 @@ export const StyledSubscriptionContainer = styled(Container)(({ theme, backgroun
 
 export const StyledSubscriptionForm = styled('form')(({ theme }) => {
     return {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
+        margin: `0 auto`,
+        [theme.breakpoints.down('sm')]: {
+            width: `100%`
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: `50%`
+        },
     }
 });

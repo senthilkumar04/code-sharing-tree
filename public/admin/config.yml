@@ -90,11 +90,11 @@ collections:
         fields:
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Subscribe button label', name: 'subscribeBtnLabel', widget: 'string'}
-          - label: "Featured Image"
-            name: "thumbnail"
-            widget: "image"
-            default: "/img/newletter-background.png"
+          - label: 'Background image'
+            name: "backgroundImage"
+            widget: 'image'
+            default: 'img/newletter-background.png'
             media_library:
               config:
                 multiple: false
-          
+          - {label: 'Is background image a pattern', name: 'isBackgroundPattern', widget: boolean, default: false}
