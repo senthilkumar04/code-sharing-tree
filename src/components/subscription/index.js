@@ -2,10 +2,13 @@ import React from 'react'
 import * as _ from 'lodash';
 
 import Typography from '@material-ui/core/Typography';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+
+import Blockout from '../blockout';
 
 import { StyledSubscriptionContainer, StyledSubscriptionForm } from './subscription.styles';
 
@@ -18,18 +21,25 @@ const Subscription = (props) => {
     const bgDetails = { backgroundImage, isBackgroundPattern }
     return (
         <StyledSubscriptionContainer bgdata={bgDetails}>
-                <Typography variant="h6" component="h2">{title}</Typography>
-                <Box my={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
+                {!isBackgroundPattern && <Blockout opacity={0.3} />}
+                <Box zIndex="tooltip"><Typography variant="h6" component="h2">{title}</Typography></Box>
+                <Box zIndex="tooltip" my={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
                     <StyledSubscriptionForm autoComplete="off">
-                        <Grid container>
-                            <Grid item xs={12} sm={4}>
-                                <Box mb={2} mr={3}><TextField size="small" id="field-subscriber-name" label="Your name" color="primary"/></Box>
+                        <Grid container spacing={4}>
+                            <Grid item xs={12} sm={6}>
+                                <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                                    <TextField fullWidth id="field-subscriber-name" label="Your name" variant="filled" />
+                                </Box>
                             </Grid>
-                            <Grid item xs={12} sm={4} >
-                                <Box mb={5} mr={3}><TextField size="small" id="field-subscriber-email" label="Your email address" color="primary" /></Box>
+                            <Grid item xs={12} sm={6} >
+                                <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                                    <TextField fullWidth id="field-subscriber-email" label="Your email address" color="secondary" variant="filled" />
+                                </Box>
                             </Grid>
-                            <Grid item xs={12} sm={4} mb={2}>
-                                <Button variant="contained">{subscribeBtnLabel}</Button>
+                            <Grid item xs={12}>
+                                <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                                    <Button variant="contained" color="default" size="large" endIcon={<NotificationsIcon />}>{subscribeBtnLabel}</Button>
+                                </Box>
                             </Grid>
                         </Grid>
                     </StyledSubscriptionForm>

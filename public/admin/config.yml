@@ -98,3 +98,4 @@ collections:
               config:
                 multiple: false
           - {label: 'Is background image a pattern', name: 'isBackgroundPattern', widget: boolean, default: false}
+          - {label: 'Show transparent background', name: 'isTransparentBackground', widget: boolean, default: false}
