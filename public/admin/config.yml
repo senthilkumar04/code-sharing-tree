@@ -16,14 +16,14 @@ collections:
           name: 'teamDetails'
           widget: 'list'
           fields:
+              - {label: "Member name", name: "memberName", widget: "string"}
               - label: 'Member title'
                 name: 'memberTitle'
                 widget: 'select'
                 options:
                   - { label: "Mr", value: "mr" }
                   - { label: "Mrs", value: "mrs" }
-                default: ["Mr"]
-              - {label: "Member name", name: "memberName", widget: "string"}
+                default: [{ label: "Mr", value: "mr" }]
               - {label: "Member role", name: "memberRole", widget: "string"}
               - label: 'Team Member Image'
                 name: 'memberAvatar'
