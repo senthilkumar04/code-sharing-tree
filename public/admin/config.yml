@@ -13,14 +13,27 @@ collections:
       file: 'contents/home.md'
       fields:
         - {label: 'Title', name: 'title', widget: 'string'}
-        - {label: 'Publish Date', name: 'date', widget: 'datetime' }
-        - {label: 'Body', name: 'body', widget: 'markdown'}
-        - label: 'Cats'
-          name: 'cats'
-          widget: list
+        - label: 'Team details'
+          name: 'teamDetails'
+          widget: 'object'
           fields:
-            - {label: 'Name', name: 'name', widget: 'string'}
-            - {label: 'Description', name: 'description', widget: 'text'}
+              - label: 'Member title'
+                name: 'memberTitle'
+                widget: 'select'
+                options:
+                  - { label: "Mr", value: "mr" }
+                  - { label: "Mrs", value: "mrs" }
+                default: ["mrs"]
+              - {label: "Member name", name: "memberName", widget: "string"}
+              - {label: "Member role", name: "memberRole", widget: "string"}
+              - label: 'Team Member Image'
+                name: 'memberAvatar'
+                widget: 'image'
+                media_library:
+                  config:
+                    multiple: false
+              
+        
   - name: 'settings'
     label: 'Settings'
     files:
