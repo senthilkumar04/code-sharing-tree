@@ -12,7 +12,6 @@ collections:
       name: 'home'
       file: 'contents/home.md'
       fields:
-        - {label: 'Title', name: 'title', widget: 'string'}
         - label: 'Team details'
           name: 'teamDetails'
           widget: 'object'

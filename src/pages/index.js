@@ -15,10 +15,8 @@ import { getFooterWidgets } from '../services/footer';
 import { getSubscriptionDetails } from '../services/subscription';
 
 /** Contents imports */
-import { attributes, react as HomeContent } from "../../contents/home.md";
 
 export default function Home(props)  {
-  let { title, cats } = attributes;
   const { subscription } = props;
   return (
     <Fragment>
