@@ -14,7 +14,7 @@ collections:
       fields:
         - label: 'Team details'
           name: 'teamDetails'
-          widget: 'object'
+          widget: 'list'
           fields:
               - label: 'Member title'
                 name: 'memberTitle'
@@ -22,7 +22,7 @@ collections:
                 options:
                   - { label: "Mr", value: "mr" }
                   - { label: "Mrs", value: "mrs" }
-                default: ["mrs"]
+                default: ["Mr"]
               - {label: "Member name", name: "memberName", widget: "string"}
               - {label: "Member role", name: "memberRole", widget: "string"}
               - label: 'Team Member Image'
