@@ -23,7 +23,7 @@ const Subscription = (props) => {
         <StyledSubscriptionContainer bgdata={bgDetails}>
                 {!isBackgroundPattern && <Blockout opacity={0.3} />}
                 <Box zIndex="tooltip"><Typography variant="h6" component="h2">{title}</Typography></Box>
-                <Box zIndex="tooltip" my={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
+                <Box zIndex="tooltip" mt={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
                     <StyledSubscriptionForm autoComplete="off" name="contact" method="POST" data-netlify="true">
                         <Grid container spacing={4}>
                             <Grid item xs={12} sm={6}>
@@ -33,12 +33,12 @@ const Subscription = (props) => {
                             </Grid>
                             <Grid item xs={12} sm={6} >
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <TextField fullWidth id="field-subscriber-email" label="Your email address" color="secondary" variant="filled" />
+                                    <TextField fullWidth id="field-subscriber-email" label="Your email address" variant="filled" />
                                 </Box>
                             </Grid>
                             <Grid item xs={12}>
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <Button variant="contained" color="default" size="large" type="submit" endIcon={<NotificationsIcon />}>{subscribeBtnLabel}</Button>
+                                    <Button variant="contained" color="primary" size="large" type="submit" endIcon={<NotificationsIcon />}>{subscribeBtnLabel}</Button>
                                 </Box>
                             </Grid>
                         </Grid>
