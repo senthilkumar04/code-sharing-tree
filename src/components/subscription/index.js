@@ -18,10 +18,11 @@ const Subscription = (props) => {
     const subscribeBtnLabel = _.get(data, 'subscribeBtnLabel', 'Join our mailing list to keep up to date on the latest news.');
     const backgroundImage = _.get(data, 'backgroundImage', null);
     const isBackgroundPattern = _.get(data, 'isBackgroundPattern', false);
+    const isTransparentBackground = _.get(data, 'isTransparentBackground', false);
     const bgDetails = { backgroundImage, isBackgroundPattern }
     return (
         <StyledSubscriptionContainer bgdata={bgDetails}>
-                {!isBackgroundPattern && <Blockout opacity={0.3} />}
+                {isTransparentBackground && <Blockout opacity={0.3} />}
                 <Box zIndex="tooltip"><Typography variant="h6" component="h2">{title}</Typography></Box>
                 <Box zIndex="tooltip" mt={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
                     <StyledSubscriptionForm autoComplete="off" name="contact" method="POST" data-netlify="true">
