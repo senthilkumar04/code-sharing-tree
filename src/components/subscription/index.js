@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Blockout from '../blockout';
 
-import { StyledSubscriptionContainer, StyledSubscriptionForm } from './subscription.styles';
+import { StyledSubscriptionContainer, StyledSubscriptionForm, StyledSubscriptionTextField } from './subscription.styles';
 
 const Subscription = (props) => {
     const { data  } = props;
@@ -22,19 +22,18 @@ const Subscription = (props) => {
     const bgDetails = { backgroundImage, isBackgroundPattern }
     return (
         <StyledSubscriptionContainer bgdata={bgDetails}>
-                {isTransparentBackground && <Blockout opacity={0.3} />}
                 <Box zIndex="tooltip"><Typography variant="h6" component="h2">{title}</Typography></Box>
                 <Box zIndex="tooltip" mt={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
                     <StyledSubscriptionForm autoComplete="off" name="contact" method="POST" data-netlify="true">
                         <Grid container spacing={4}>
                             <Grid item xs={12} sm={6}>
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <TextField fullWidth id="field-subscriber-name" label="Your name" variant="filled" />
+                                    <StyledSubscriptionTextField fullWidth id="field-subscriber-name" label="Your name" variant="filled" classes={{ root: { color: 'white' }}} />
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} >
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <TextField fullWidth id="field-subscriber-email" label="Your email address" variant="filled" />
+                                    <StyledSubscriptionTextField fullWidth id="field-subscriber-email" label="Your email address" variant="filled" />
                                 </Box>
                             </Grid>
                             <Grid item xs={12}>

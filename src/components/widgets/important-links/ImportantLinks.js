@@ -8,8 +8,19 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+import { makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles((theme) => {
+    return {
+        root: {
+            color: theme.palette.common.white
+        }
+    }
+})
+
 const ImportantLinksWidget = ({ data }) => {
     const { widgetTitle = '', linkslist = [] } = data;
+    const classes = useStyles();
     return (
         <Fragment>
             <Typography variant="subtitle2" component="h2" color="primary">{_.toUpper(widgetTitle)}</Typography>
@@ -21,7 +32,7 @@ const ImportantLinksWidget = ({ data }) => {
                         const listIndex = `${title}-${index}`
                         return (
                             <ListItem key={listIndex} dense disableGutters>
-                                <ListItemText primary={<Link href={url}>{title}</Link>} />
+                                <ListItemText primary={<Link className={classes.root} href={url}>{title}</Link>} />
                             </ListItem>
                         );
                     })
