@@ -37,6 +37,7 @@ collections:
     folder: "contents/testimonials"
     create: true
     fields:
+      - {label: "Testimonial Title", name: "title", widget: "string"}
       - {label: "Testimonial Author", name: "testimonialAuthor", widget: "string"}
       - {label: "Testimonial", name: "testimonialDesc", widget: "text"}
 
