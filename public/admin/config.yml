@@ -31,8 +31,15 @@ collections:
                 media_library:
                   config:
                     multiple: false
-              
-        
+
+  - name: 'testimonials'
+    label: 'Testimonials'
+    folder: "contents/testimonials"
+    create: true
+    fields:
+      - {label: "Testimonial Author", name: "testimonialAuthor", widget: "string"}
+      - {label: "Testimonial", name: "testimonialDesc", widget: "text"}
+
   - name: 'settings'
     label: 'Settings'
     files:
