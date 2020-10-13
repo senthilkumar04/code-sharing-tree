@@ -7,13 +7,14 @@ import HomeLayout from '../layouts/home';
 import { getNavigationMenuList } from '../services/menu';
 import { getFooterWidgets } from '../services/footer';
 import { getSubscriptionDetails } from '../services/subscription';
+import { getTestimonialDetails } from '../services/testimonials';
 import { getTeamList } from '../services/home';
 
 export default function Home(props)  {
-  const { subscription, teamList } = props;
+  const { subscription, teamList, testimonials } = props;
   return (
     <Fragment>
-      <HomeLayout teamList={teamList} subscription={subscription} />
+      <HomeLayout teamList={teamList} subscription={subscription} testimonials={testimonials} />
     </Fragment>
   );
 }
@@ -23,12 +24,14 @@ export async function getStaticProps() {
   const footerWidgets = getFooterWidgets();
   const subscription = getSubscriptionDetails();
   const teamList = getTeamList();
+  const testimonials = getTestimonialDetails();
   return {
     props: {
       menus,
       footerWidgets,
       subscription, 
-      teamList
+      teamList,
+      testimonials
     }
   }
 }
