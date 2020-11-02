@@ -12,6 +12,21 @@ collections:
       name: 'home'
       file: 'contents/home.md'
       fields:
+        - label: 'Home Banner Carousel'
+          name: 'homeCarousel'
+          widget: 'list'
+          fields:
+            - {label: 'Title', name: 'title', widget: 'string'}
+            - {label: 'Subtitle', name: 'subTitle', widget: 'string' }
+            - {label: 'Short description', name: 'description', widget: 'text' }
+            - {label: 'Show CTA', name: 'showCTA', widget: 'boolean' }
+            - {label: 'CTA button label', name: 'ctaBtnLabel', widget: 'string'}
+            - label: 'Banner image'
+              name: 'bannerImage'
+              widget: 'image'
+              media_library:
+                config:
+                  multiple: false
         - label: 'Team details'
           name: 'teamDetails'
           widget: 'list'

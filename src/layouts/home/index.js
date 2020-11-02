@@ -8,6 +8,7 @@ import Grid from "@material-ui/core/Grid";
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
+import CustomCarousel from '../../components/carousel';
 
 import { StyledTeamAvatar } from "./home-layout.styles";
 
@@ -86,6 +87,25 @@ const renderTestimonialSection = (testimonials) => {
 
 }
 
+const renderHomeCarousel = () => {
+  const carouselData = [{
+    tileId: `tile 1`,
+    backgroundColor: 'green'
+  }, {
+    tileId: `tile 2`,
+    backgroundColor: 'red'
+  }, {
+    tileId: `tile 3`,
+    backgroundColor: 'yellow'
+  }, {
+    tileId: `tile 4`,
+    backgroundColor: 'blue'
+  }]
+  return (
+      <CustomCarousel data={carouselData}/>
+  );
+}
+
 const HomeSection = (props) => {
   const { children, config } = props;
   const title = _.get(config, 'title', '');
@@ -126,6 +146,7 @@ const HomeLayout = (props) => {
   const { subscription, teamList = [], testimonials = [] } = props;
   return (
     <Fragment>
+        {renderHomeCarousel()}
         {renderTestimonialSection(testimonials)}
         {renderTeamSection(teamList)}
         <Subscription data={subscription} />

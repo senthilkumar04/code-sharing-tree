@@ -1,11 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {StyledBockoutBox} from './blockout.styles';
 
 const Blockout = ({ opacity }) => {
     return (
-        <StyledBockoutBox zIndex="modal" opacity={opacity} />
+        <StyledBockoutBox opacity={opacity} />
     );
+}
+
+Blockout.propTypes = {
+    opacity: PropTypes.number,
+};
+
+Blockout.defaultProps = {
+    opacity: 0.5
 }
 
 export default Blockout;
