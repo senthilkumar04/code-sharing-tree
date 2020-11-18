@@ -33,7 +33,8 @@ export const StyledAnimationGrid = styled(Grid)(({ theme }) => {
 
 export const StyledGridItemWrapper = styled(Grid)({
    position: 'relative',
-   height: `300px`
+   height: `calc(100vh - 120px)`,
+   overflow: 'hidden',
 });
 
 export const StyledControlsBox = styled(Box)(({ theme }) => {
@@ -47,5 +48,50 @@ export const StyledControlsBox = styled(Box)(({ theme }) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'stretch',
+   }
+})
+
+export const StyledCarouselImg = styled('img')(() => {
+   return {
+      width: `100%`,
+   }
+})
+
+export const StyledCarouselContent = styled(Box)(({ theme }) => {
+   return {
+      display: 'flex',
+      flexDirection: 'column',
+      margin: `${theme.spacing(2)}px`,
+      justifyContent: 'flex-start',
+      alignSelf: 'center',
+      padding: `${theme.spacing(2)}px`,
+      color: theme.palette.common.white,
+      [theme.breakpoints.down('sm')]: {
+         width: `auto`,
+      },
+      [theme.breakpoints.up('sm')]: {
+         width: `50%`,
+      },
+   }
+})
+
+export const StyledControlBtn = styled(IconButton)(({ theme }) => {
+   return {
+      backgroundColor: theme.palette.common.white
+   }
+})
+
+export const StyledImgWrapper = styled(Box)(({ bgimage }) => {
+   return {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'stretch',
+      position: 'relative',
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bgimage})`,
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      minHeight: `350px`
    }
 })

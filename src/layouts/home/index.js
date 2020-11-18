@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
-import CustomCarousel from '../../components/carousel';
+import Carousel from '../../components/carousel';
 
 import { StyledTeamAvatar } from "./home-layout.styles";
 
@@ -49,16 +49,20 @@ const renderTeamList = (teams) => {
   });
 };
 
-const renderTeamSection = (teamList) => {
+const renderTeamSection = ({teamList, testimonials}) => {
   const config = {
     title: 'Our Team',
+    id: 'our-team',
     subTitle: 'Get to know the people behind the sharing tree',
     showDivider: true
   };
   return (
-    <HomeSection config={config}>
-      <Grid container>{renderTeamList(teamList)}</Grid>
-    </HomeSection>
+    <Fragment>
+        <HomeSection config={config}>
+          <Grid container>{renderTeamList(teamList)}</Grid>
+        </HomeSection>
+        {renderTestimonialSection(testimonials)}
+    </Fragment>
   );
 };
 
@@ -87,23 +91,29 @@ const renderTestimonialSection = (testimonials) => {
 
 }
 
-const renderHomeCarousel = () => {
-  const carouselData = [{
-    tileId: `tile 1`,
-    backgroundColor: 'green'
-  }, {
-    tileId: `tile 2`,
-    backgroundColor: 'red'
-  }, {
-    tileId: `tile 3`,
-    backgroundColor: 'yellow'
-  }, {
-    tileId: `tile 4`,
-    backgroundColor: 'blue'
-  }]
+const renderAboutUsSection = () => {
+  const config = {
+    title: 'About Us',
+    id: 'about-us',
+    subTitle: 'Get to know who we are',
+    showDivider: true
+  }
   return (
-      <CustomCarousel data={carouselData}/>
+    <HomeSection config={config}>
+      <Box display="flex" flexDirection="row" flexWrap justifyContent="center" alignItems="center">
+        <Box>
+          
+        </Box>
+        <Box display="flex" flexDirection="column" justifyContent="center">
+
+        </Box>
+      </Box>
+    </HomeSection>
   );
+}
+
+const renderHomeCarousel = (carouselData) => {
+  return <Carousel data={carouselData}/>
 }
 
 const HomeSection = (props) => {
@@ -111,12 +121,14 @@ const HomeSection = (props) => {
   const title = _.get(config, 'title', '');
   const subTitle = _.get(config, 'subTitle', '');
   const showDivider = _.get(config, 'showDivider', false);
+  const sectionId = _.get(config, 'id', '');
   return (
     <Box
       display="flex"
       flexDirection="column"
       justifyContent="center"
       alignItems="stretch"
+      id={sectionId}
     >
       {showDivider && <Divider />}
       <Box
@@ -143,12 +155,12 @@ const HomeSection = (props) => {
 }
 
 const HomeLayout = (props) => {
-  const { subscription, teamList = [], testimonials = [] } = props;
+  const { subscription, teamList = [], testimonials = [], featuredBanner = [] } = props;
   return (
     <Fragment>
-        {renderHomeCarousel()}
-        {renderTestimonialSection(testimonials)}
-        {renderTeamSection(teamList)}
+        {renderHomeCarousel(featuredBanner)}
+        {renderAboutUsSection()}
+        {renderTeamSection({ teamList, testimonials })}
         <Subscription data={subscription} />
     </Fragment>
   );

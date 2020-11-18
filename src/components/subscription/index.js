@@ -1,5 +1,6 @@
 import React from 'react'
 import * as _ from 'lodash';
+import { withStyles } from '@material-ui/core/styles';
 
 import Typography from '@material-ui/core/Typography';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -10,7 +11,15 @@ import Grid from '@material-ui/core/Grid';
 
 import Blockout from '../blockout';
 
-import { StyledSubscriptionContainer, StyledSubscriptionForm, StyledSubscriptionTextField } from './subscription.styles';
+import { StyledSubscriptionContainer, StyledSubscriptionForm } from './subscription.styles';
+
+const StyledSubscriptionTextField = withStyles((theme) => {
+    return {
+        root : {
+            backgroundColor: theme.palette.common.white
+        }
+    }
+})(TextField);
 
 const Subscription = (props) => {
     const { data  } = props;
@@ -28,7 +37,7 @@ const Subscription = (props) => {
                         <Grid container spacing={4}>
                             <Grid item xs={12} sm={6}>
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <StyledSubscriptionTextField fullWidth id="field-subscriber-name" label="Your name" variant="filled" classes={{ root: { color: 'white' }}} />
+                                    <StyledSubscriptionTextField fullWidth id="field-subscriber-name" label="Your name" variant="filled" />
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} >

@@ -9,7 +9,6 @@ import { StyledTestimonialCard } from './testimonial.styles';
 
 const Testimonial = (props) => {
     const { data } = props;
-    console.log(data);
     const author = _.get(data, 'author', 'Unkown Author');
     const description = _.get(data, 'description', '');
     return (

@@ -1,7 +1,6 @@
 import { styled } from '@material-ui/core/styles';
 
 import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField'
 
 export const StyledSubscriptionContainer = styled(Box)(({ theme, bgdata }) => {
     const { backgroundImage, isBackgroundPattern } = bgdata;
@@ -19,14 +18,6 @@ export const StyledSubscriptionContainer = styled(Box)(({ theme, bgdata }) => {
         position: 'relative',
     }
 });
-
-export const StyledSubscriptionTextField = styled(TextField)(({ theme }) => {
-    return {
-        '& .MuiFilledInput-root': {
-            backgroundColor: theme.palette.common.white
-        }
-    }
-})
 
 export const StyledSubscriptionForm = styled('form')(({ theme }) => {
     return {
