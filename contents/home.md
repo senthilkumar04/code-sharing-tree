@@ -1,13 +1,13 @@
 ---
 homeCarousel:
-  - title: Banner 1
-    subTitle: Banner 1 subtitle
+  - title: Sharing tree feeds
+    subTitle: We help the poor with their daily needs
     description: This is a shot desc
     showCTA: true
-    ctaBtnLabel: CTA Btn 1
+    ctaBtnLabel: Know more
     bannerImage: img/shutterstock_1013059525.jpg
-  - title: Banner 2
-    subTitle: Banner 2 Sub title
+  - title: Sharing tree heals
+    subTitle: We help the poor with their daily needs
     description: Short desc
     showCTA: false
     bannerImage: img/shutterstock_1813922750.jpg
