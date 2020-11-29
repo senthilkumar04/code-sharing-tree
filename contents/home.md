@@ -24,7 +24,7 @@ teamDetails:
     memberRole: Trustee
     memberAvatar: img/team-member-succendran.jpeg
 aboutUs:
-  aboutUsImage: img/asset-2-3x.png
+  aboutUsImage: img/about-sharing-tree.png
   description: Sharing Tree, planted in Oct 2007 is a non profit charitable
     organization which is a result of like- minded people who primarily work
     together for the advancement of needy by providing funds or the cause of
