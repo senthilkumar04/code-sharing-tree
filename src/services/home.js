@@ -30,3 +30,10 @@ export const getHomeCarouselDetails = () => {
     homeCarousel = _.get(data, 'homeCarousel', []);
     return homeCarousel;
 }
+
+export const getAboutUsData = () => {
+    let aboutUsData = null;
+    const data = fetchHomeMarkDown();
+    aboutUsData = _.get(data, 'aboutUs', null);
+    return aboutUsData;
+}

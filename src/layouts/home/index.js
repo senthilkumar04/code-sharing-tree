@@ -5,12 +5,14 @@ import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
 import Carousel from '../../components/carousel';
 
-import { StyledTeamAvatar } from "./home-layout.styles";
+import { StyledTeamAvatar, StyledAboutUsImg, StyledAboutPaper, StyledAboutContent } from "./home-layout.styles";
 
 const renderTeamList = (teams) => {
   return _.map(teams, (teamMember, index) => {
@@ -91,21 +93,41 @@ const renderTestimonialSection = (testimonials) => {
 
 }
 
-const renderAboutUsSection = () => {
+const renderAboutUsSection = (aboutUs) => {
   const config = {
     title: 'About Us',
     id: 'about-us',
     subTitle: 'Get to know who we are',
     showDivider: true
   }
+  const {description, visionDesc, missionDesc} = aboutUs;
   return (
     <HomeSection config={config}>
-      <Box display="flex" flexDirection="row" flexWrap justifyContent="center" alignItems="center">
-        <Box>
-          
-        </Box>
-        <Box display="flex" flexDirection="column" justifyContent="center">
-
+      <Box display="flex" flexDirection="column" justifyContent="flex-start">
+        <StyledAboutContent mx={4} px={8}>
+          <Typography align="center" variant="body2" gutterBottom={true}><Box lineHeight={1.8}>{description}</Box></Typography>
+        </StyledAboutContent>
+        <Box p={4}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6}>
+              <StyledAboutPaper>
+                <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                  <VisibilityIcon color="primary" fontSize="large"/>
+                  <Typography variant="body1" gutterBottom={true}><Box fontWeight={700} mb={1}>VISION</Box></Typography>
+                  <Typography align="center" variant="body2"><Box lineHeight={1.8}>{visionDesc}</Box></Typography>
+                </Box>
+              </StyledAboutPaper>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <StyledAboutPaper>
+                <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                  <WifiTetheringIcon color="primary" fontSize="large"/>
+                  <Typography variant="body1" gutterBottom={true}><Box fontWeight={700} mb={1}>MISSION</Box></Typography>
+                  <Typography align="center" variant="body2"><Box lineHeight={1.8}>{missionDesc}</Box></Typography>
+                </Box>
+              </StyledAboutPaper>
+            </Grid>
+          </Grid>
         </Box>
       </Box>
     </HomeSection>
@@ -155,11 +177,11 @@ const HomeSection = (props) => {
 }
 
 const HomeLayout = (props) => {
-  const { subscription, teamList = [], testimonials = [], featuredBanner = [] } = props;
+  const { subscription, teamList = [], testimonials = [], featuredBanner = [], aboutUs = null } = props;
   return (
     <Fragment>
         {renderHomeCarousel(featuredBanner)}
-        {renderAboutUsSection()}
+        {renderAboutUsSection(aboutUs)}
         {renderTeamSection({ teamList, testimonials })}
         <Subscription data={subscription} />
     </Fragment>
