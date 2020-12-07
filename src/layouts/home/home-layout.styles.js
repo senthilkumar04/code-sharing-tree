@@ -23,11 +23,14 @@ export const StyledAboutPaper = styled(Paper)(({ theme }) => {
 
 export const StyledAboutContent = styled(Box)(({ theme }) => {
   return {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.only('xs')]: {
       padding: `0 ${theme.spacing(4)}px 0 ${theme.spacing(4)}px`
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.only('sm')]: {
       padding: `0 ${theme.spacing(8)}px 0 ${theme.spacing(8)}px`
+    },
+    [theme.breakpoints.up('lg')]: {
+      padding: `0 ${theme.spacing(16)}px 0 ${theme.spacing(16)}px`
     },
   }
 })

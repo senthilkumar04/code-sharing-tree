@@ -59,6 +59,18 @@ collections:
             - {label: 'Description', name: 'description', widget: 'text'}
             - {label: 'Vision', name: 'visionDesc', widget: 'string'}
             - {label: 'Mission', name: 'missionDesc', widget: 'string'}
+        - label: 'What we do'
+          name: 'whatWeDo'
+          widget: 'list'
+          fields:
+            - {label: 'Title', name: 'title', widget: 'string'}
+            - {label: 'Description', name: 'description', widget: 'text'}
+            - label: 'What we do image'
+              name: 'whatWeDoImage'
+              widget: 'image'
+              media_library:
+                config:
+                  multiple: false
 
   - name: 'settings'
     label: 'Settings'
