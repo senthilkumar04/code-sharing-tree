@@ -164,7 +164,7 @@ collections:
 
   - label: "Stories"
     name: "stories"
-    folder: "posts/story"
+    folder: "contents/posts/story"
     create: true
     identifier_field: name
     fields:
