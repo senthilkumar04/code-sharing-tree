@@ -10,10 +10,6 @@ export const StyledTeamAvatar = styled(Avatar)(({ theme }) => {
   };
 });
 
-export const StyledAboutUsImg = styled('img')({
-  width: `100%`
-})
-
 export const StyledAboutPaper = styled(Paper)(({ theme }) => {
   return {
     backgroundColor: theme.palette.grey[200],
@@ -32,5 +28,23 @@ export const StyledAboutContent = styled(Box)(({ theme }) => {
     [theme.breakpoints.up('lg')]: {
       padding: `0 ${theme.spacing(16)}px 0 ${theme.spacing(16)}px`
     },
+  }
+})
+
+export const StyledTileUnderline = styled('div')(({ theme }) => {
+  return {
+    borderTop: `3px solid ${theme.palette.primary.main}`,
+    width: `150px`,
+    margin: `${theme.spacing(2)}px 0`
+  }
+})
+
+export const StyledWhatWeDoImage = styled(Box)(({ image }) => {
+  return {
+    height: '250px',
+    backgroundImage: `url(${image})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
   }
 })

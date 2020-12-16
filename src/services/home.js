@@ -37,3 +37,10 @@ export const getAboutUsData = () => {
     aboutUsData = _.get(data, 'aboutUs', null);
     return aboutUsData;
 }
+
+export const getWhatWeDO = () => {
+    let whatWeDoData = null;
+    const data = fetchHomeMarkDown();
+    whatWeDoData = _.get(data, 'whatWeDo', null);
+    return whatWeDoData;
+}

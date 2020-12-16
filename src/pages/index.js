@@ -8,13 +8,13 @@ import { getNavigationMenuList } from '../services/menu';
 import { getFooterWidgets } from '../services/footer';
 import { getSubscriptionDetails } from '../services/subscription';
 import { getTestimonialDetails } from '../services/testimonials';
-import { getTeamList, getHomeCarouselDetails, getAboutUsData } from '../services/home';
+import { getTeamList, getHomeCarouselDetails, getAboutUsData, getWhatWeDO } from '../services/home';
 
 export default function Home(props)  {
-  const { subscription, teamList, testimonials, homeCarousel, aboutUs } = props;
+  const { subscription, teamList, testimonials, homeCarousel, aboutUs, whatWeDo } = props;
   return (
     <Fragment>
-      <HomeLayout teamList={teamList} subscription={subscription} testimonials={testimonials} featuredBanner={homeCarousel} aboutUs={aboutUs} />
+      <HomeLayout teamList={teamList} subscription={subscription} testimonials={testimonials} featuredBanner={homeCarousel} aboutUs={aboutUs} whatWeDo={whatWeDo} />
     </Fragment>
   );
 }
@@ -27,6 +27,7 @@ export async function getStaticProps() {
   const homeCarousel = getHomeCarouselDetails();
   const testimonials = getTestimonialDetails();
   const aboutUs = getAboutUsData();
+  const whatWeDo = getWhatWeDO();
   return {
     props: {
       menus,
@@ -35,7 +36,8 @@ export async function getStaticProps() {
       teamList,
       testimonials,
       homeCarousel,
-      aboutUs
+      aboutUs,
+      whatWeDo
     }
   }
 }

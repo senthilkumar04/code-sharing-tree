@@ -1,18 +1,20 @@
 import React, { Fragment } from "react";
 import * as _ from "lodash";
 
+import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import Button from '@material-ui/core/Button';
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
 import Carousel from '../../components/carousel';
 
-import { StyledTeamAvatar, StyledAboutUsImg, StyledAboutPaper, StyledAboutContent } from "./home-layout.styles";
+import { StyledTeamAvatar, StyledAboutPaper, StyledAboutContent, StyledTileUnderline, StyledWhatWeDoImage } from "./home-layout.styles";
 
 const renderTeamList = (teams) => {
   return _.map(teams, (teamMember, index) => {
@@ -63,7 +65,7 @@ const renderTeamSection = ({teamList, testimonials}) => {
         <HomeSection config={config}>
           <Grid container>{renderTeamList(teamList)}</Grid>
         </HomeSection>
-        {renderTestimonialSection(testimonials)}
+        {(testimonials.length > 2) && renderTestimonialSection(testimonials)}
     </Fragment>
   );
 };
@@ -87,7 +89,14 @@ const renderTestimonialSection = (testimonials) => {
   };
   return (
     <HomeSection config={config}>
-      <Grid container spacing={2} direction="row" justify="center" alignItems="center">{renderTestimonialList(testimonials)}</Grid>
+      <Box px={3}>
+        <Grid container spacing={2} direction="row" justify="center" alignItems="center">
+          {renderTestimonialList(testimonials)}
+        </Grid>
+        <Box my={3} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+          <Button variant="contained" color="primary">View all</Button>
+        </Box>
+      </Box>
     </HomeSection>
   );
 
@@ -134,6 +143,37 @@ const renderAboutUsSection = (aboutUs) => {
   );
 }
 
+const renderWhatWeDoSection = (whatWeDo) => {
+  const config = {
+    title: 'What we do',
+    id: 'what-we-do',
+    subTitle: 'Get to know what we do',
+    showDivider: true
+  }
+  return (
+    <HomeSection config={config}>
+      <Box display="flex" flexDirection="column" justifyContent="flex-start" mb={3}>
+        <Grid container>
+          {
+            _.map(whatWeDo, (item) => {
+              const {title, description, whatWeDoImage} = item;
+              return (
+                <Grid item xs={12} sm={12} md={6}>
+                  <Box display="flex" flexDirection="column" alignItems="stretch" p={2}>
+                    <StyledWhatWeDoImage image={whatWeDoImage} mb={1} />
+                    <Typography component="h2" variant="h6" gutterBottom>{title}</Typography>
+                    <Typography variant="body2" gutterBottom><Box textAlign="justify" lineHeight={1.8}>{description}</Box></Typography>
+                  </Box>
+                </Grid>
+              );
+            })
+          }
+        </Grid>
+      </Box>
+    </HomeSection>
+  );
+}
+
 const renderHomeCarousel = (carouselData) => {
   return <Carousel data={carouselData}/>
 }
@@ -153,35 +193,39 @@ const HomeSection = (props) => {
       id={sectionId}
     >
       {showDivider && <Divider />}
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-        p={3}
-        mb={2}
-      >
-        <Typography variant="h6" component="h2">{title}</Typography>
-        <Typography variant="caption" component="h3" align="center">{subTitle}</Typography>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="stretch"
-      >
-        {children}
-      </Box>
+      <Container maxWidth="lg">
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          p={3}
+          mb={2}
+        >
+          <Typography variant="h6" component="h2">{title}</Typography>
+          <Typography variant="caption" component="h3" align="center">{subTitle}</Typography>
+          <StyledTileUnderline />
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="stretch"
+        >
+          {children}
+        </Box>
+      </Container>
     </Box>
   );
 }
 
 const HomeLayout = (props) => {
-  const { subscription, teamList = [], testimonials = [], featuredBanner = [], aboutUs = null } = props;
+  const { subscription, teamList = [], testimonials = [], featuredBanner = [], aboutUs = null, whatWeDo = [] } = props;
   return (
     <Fragment>
         {renderHomeCarousel(featuredBanner)}
         {renderAboutUsSection(aboutUs)}
+        {renderWhatWeDoSection(whatWeDo)}
         {renderTeamSection({ teamList, testimonials })}
         <Subscription data={subscription} />
     </Fragment>
