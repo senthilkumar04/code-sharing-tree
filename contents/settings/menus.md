@@ -20,9 +20,4 @@ headerMenuNavigation:
     title: Our team
     srTitle: Tap to scroll to the our team section
     url: our-team
-  - inline: false
-    special: true
-    title: Donate
-    srTitle: Tap to navigate to donate page
-    url: donate
 ---
