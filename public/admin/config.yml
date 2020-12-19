@@ -133,8 +133,14 @@ collections:
               - {label: 'Menu Title', name: 'title', widget: 'string'}
               - {label: 'Menu Screen reader Title', name: 'srTitle', widget: 'string'}
               - {label: 'Menu URL', name: 'url', widget: 'string'}
-              - {label: 'Is menu inline ?', name: 'inline', widget: 'boolean', default: true}
-              - {label: 'Is menu special ?', name: 'special', widget: 'boolean', default: false, required: false}
+          - label: 'Header navigation special menu'
+            name: 'headerMenuSpecialNavigation'
+            widget:
+                'object'
+            fields:
+              - {label: 'Menu Title', name: 'title', widget: 'string'}
+              - {label: 'Menu Screen reader Title', name: 'srTitle', widget: 'string'}
+              - {label: 'Menu URL', name: 'url', widget: 'string'}
       - label: 'Subscription'
         name: 'subscription'
         file: 'contents/settings/subscription.md'

@@ -19,13 +19,11 @@ export const getNavigationMenuList = () => {
 };
 
 const mapMenuData = (menu) => {
-    const { title = '', srTitle = '', url = '', inline = false, special = false } = menu;
+    const { title = '', srTitle = '', url = ''} = menu;
     return {
         id: `nav-${url}`,
         label: title,
         srLabel: srTitle,
-        isInline: inline,
-        isSpecial: special,
         link: url,
     }
 };

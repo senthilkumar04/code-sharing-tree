@@ -16,10 +16,9 @@ const MenuList = ({ menus }) => {
       justifyContent="center"
     >
       {menus.map((menu) => {
-        const { id, label, srLabel, isInline, link } = menu;
-        const menuUrl = isInline ? `#${link}` : `/${link}`;
+        const { id, label, srLabel, link } = menu;
         return (
-          <Link href={menuUrl} key={id}>
+          <Link href={link} key={id}>
             <StyledMenuItem menu={menu}>
               <Typography aria-label={srLabel} variant="body1">
                 {label}
