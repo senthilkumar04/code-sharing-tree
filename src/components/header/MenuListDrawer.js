@@ -26,7 +26,7 @@ const MenuListDrawer = ({ menus, openDrawer, toggleDrawer, anchor }) => {
             menus.map((menu) => {
               const { id, label, srLabel, link } = menu;
               return (
-                <Link href={link} key={id}>
+                <Link href={`/${link}`} key={id}>
                   <ListItem button>
                     <ListItemText>
                       <Typography aria-label={srLabel} variant="body1">{label}</Typography>

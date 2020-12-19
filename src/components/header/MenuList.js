@@ -18,7 +18,7 @@ const MenuList = ({ menus }) => {
       {menus.map((menu) => {
         const { id, label, srLabel, link } = menu;
         return (
-          <Link href={link} key={id}>
+          <Link href={`/${link}`} key={id}>
             <StyledMenuItem menu={menu}>
               <Typography aria-label={srLabel} variant="body1">
                 {label}
