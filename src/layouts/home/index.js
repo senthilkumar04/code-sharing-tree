@@ -9,6 +9,14 @@ import Grid from "@material-ui/core/Grid";
 import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Button from '@material-ui/core/Button';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import IconButton from '@material-ui/core/IconButton';
+import InfoIcon from '@material-ui/icons/Info';
+
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
@@ -53,7 +61,7 @@ const renderTeamList = (teams) => {
   });
 };
 
-const renderTeamSection = ({teamList, testimonials}) => {
+const renderTeamSection = (teamList) => {
   const config = {
     title: 'Our Team',
     id: 'our-team',
@@ -65,7 +73,6 @@ const renderTeamSection = ({teamList, testimonials}) => {
         <HomeSection config={config}>
           <Grid container>{renderTeamList(teamList)}</Grid>
         </HomeSection>
-        {(testimonials.length > 2) && renderTestimonialSection(testimonials)}
     </Fragment>
   );
 };
@@ -141,6 +148,66 @@ const renderAboutUsSection = (aboutUs) => {
       </Box>
     </HomeSection>
   );
+}
+
+const renderStoriesSection = ({stories, testimonials}) => {
+  const config = {
+    title: 'Our stories',
+    id: 'our-stories',
+    subTitle: 'Get to know the sharing tree better',
+    showDivider: true
+  }
+  const theme = useTheme();
+  const isExtraSmallDevice = useMediaQuery(theme.breakpoints.only('xs'));
+  const isSmallDevice = useMediaQuery(theme.breakpoints.only('sm'));
+  const noOfCols = isExtraSmallDevice ? 1 : (isSmallDevice ? 2 : 3);
+  return (
+    <Fragment>
+      <HomeSection config={config}>
+        <Box display="flex" flexDirection="column" justifyContent="flex-start" mb={4}>
+          <GridList cellHeight={280} cols={noOfCols} spacing={20}>
+            <GridListTile>
+              <img src={"img/feeding-the-hunger-story-featured-image.jpg"} />
+              <GridListTileBar
+                title={"Feeding the hungry"}
+                subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
+                actionIcon={
+                  <IconButton>
+                    <InfoIcon />
+                  </IconButton>
+                }
+              />
+            </GridListTile>
+            <GridListTile>
+              <img src={"img/helping-people-heal-featured-image.jpg"} />
+              <GridListTileBar
+                title={"Feeding the hungry"}
+                subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
+                actionIcon={
+                  <IconButton>
+                    <InfoIcon />
+                  </IconButton>
+                }
+              />
+            </GridListTile>
+            <GridListTile>
+              <img src={"img/making-dreams-come-true-story-featured-image.jpg"} />
+              <GridListTileBar
+                title={"Feeding the hungry"}
+                subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
+                actionIcon={
+                  <IconButton>
+                    <InfoIcon />
+                  </IconButton>
+                }
+              />
+            </GridListTile>
+          </GridList>
+        </Box>
+      </HomeSection>
+      {(testimonials.length > 2) && renderTestimonialSection(testimonials)}
+    </Fragment>
+  )
 }
 
 const renderWhatWeDoSection = (whatWeDo) => {
@@ -226,7 +293,8 @@ const HomeLayout = (props) => {
         {renderHomeCarousel(featuredBanner)}
         {renderAboutUsSection(aboutUs)}
         {renderWhatWeDoSection(whatWeDo)}
-        {renderTeamSection({ teamList, testimonials })}
+        {renderStoriesSection({testimonials})}
+        {renderTeamSection(teamList)}
         <Subscription data={subscription} />
     </Fragment>
   );
