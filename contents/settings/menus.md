@@ -2,22 +2,21 @@
 headerMenuNavigation:
   - inline: true
     special: false
-    title: About us
-    srTitle: Tap to scroll to the about us section
-    url: about-us
+    title: Home
+    srTitle: Tap to navigate to the home
+    url: /
   - inline: true
     special: false
-    title: What we do
-    srTitle: Tap to scroll to the what we do section
-    url: what-we-do
+    title: Testimonials
+    srTitle: Tap to navigate to the testimonials
+    url: /testimonials
   - inline: true
     special: false
-    title: Our stories
-    srTitle: Tap to scroll to the our stories section
-    url: our-stories
-  - inline: true
-    special: false
-    title: Our team
-    srTitle: Tap to scroll to the our team section
-    url: our-team
+    title: Stories
+    srTitle: Tap to navigate to the stories
+    url: /stories
+headerMenuSpecialNavigation:
+  title: Test
+  srTitle: Test
+  url: special
 ---
