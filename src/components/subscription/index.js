@@ -9,8 +9,6 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
-import Blockout from '../blockout';
-
 import { StyledSubscriptionContainer, StyledSubscriptionForm } from './subscription.styles';
 
 const StyledSubscriptionTextField = withStyles((theme) => {
@@ -22,7 +20,7 @@ const StyledSubscriptionTextField = withStyles((theme) => {
 })(TextField);
 
 const Subscription = (props) => {
-    const { data  } = props;
+    const { data } = props;
     const title = _.get(data, 'title', 'Join our mailing list to keep up to date on the latest news.');
     const subscribeBtnLabel = _.get(data, 'subscribeBtnLabel', 'Join our mailing list to keep up to date on the latest news.');
     const backgroundImage = _.get(data, 'backgroundImage', null);

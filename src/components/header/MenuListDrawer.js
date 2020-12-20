@@ -48,8 +48,6 @@ MenuListDrawer.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         srLabel: PropTypes.string.isRequired,
-        isInline: PropTypes.bool.isRequired,
-        isSpecial: PropTypes.bool.isRequired,
         link: PropTypes.string.isRequired,
       })
     ).isRequired,

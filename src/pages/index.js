@@ -1,6 +1,5 @@
 /** Core imports */
 import React, { Fragment } from "react";
-
 import HomeLayout from '../layouts/home';
 
 /** Services imports */

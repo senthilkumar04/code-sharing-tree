@@ -167,6 +167,13 @@ collections:
             fields:
               - {label: "Author", name: "author", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - {label: "Designation", name: "role", widget: "text"}
+              - label: 'Author Image'
+                name: 'thumbnail'
+                widget: 'image'
+                media_library:
+                  config:
+                    multiple: false
 
   - label: "Stories"
     name: "stories"

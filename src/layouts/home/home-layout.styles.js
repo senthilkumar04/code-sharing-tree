@@ -48,3 +48,26 @@ export const StyledWhatWeDoImage = styled(Box)(({ image }) => {
     backgroundSize: 'cover',
   }
 })
+
+export const StyledHomeMenuWrapper = styled(Box)(({ theme }) => {
+  return {
+    position: 'relative',
+    top: 0,
+    left: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: '#fff',
+    transform: 'translateY(0)',
+    transition: 'transform 0.3s ease'
+  }
+})
+
+export const StyledHomeMenuItem = styled(Box)(({ theme }) => {
+  return {
+    padding: `${theme.spacing(2)}px`,
+    cursor: 'pointer'
+  }
+})

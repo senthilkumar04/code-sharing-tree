@@ -22,14 +22,14 @@ class Donate extends Component {
 }
 
 export async function getStaticProps() {
-    const menus = getNavigationMenuList();
-    const footerWidgets = getFooterWidgets();
-    return {
-      props: {
-        menus,
-        footerWidgets
-      }
+  const menus = getNavigationMenuList();
+  const footerWidgets = getFooterWidgets();
+  return {
+    props: {
+      menus,
+      footerWidgets
     }
   }
+}
 
 export default Donate;

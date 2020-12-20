@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as _ from 'lodash';
+import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
 import Box from '@material-ui/core/Box';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -8,7 +9,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import { StyledCarouselContent, StyledControlsBox, StyledCarouselImg, StyledImgWrapper, StyledControlBtn } from './carousel.styles';
+import { StyledCarouselContent, StyledControlsBox, StyledImgWrapper, StyledControlBtn } from './carousel.styles';
 
 const NAVIGATE_FWD = 'NAVIGATE_FWD';
 const NAVIGATE_BWD = 'NAVIGATE_BWD';
