@@ -43,25 +43,10 @@ const Header = (props) => {
         justifyContent="flex-start"
         px={1}
       >
-        <Box display={{ sm: "block", md: "none", lg: "none", xl: "none" }}>
-          <StyledIconButton onClick={toggleDrawer(true)}>
-            <MenuIcon />
-          </StyledIconButton>
-          <MenuListDrawer
-            menus={menuList}
-            openDrawer={openDrawer}
-            anchor={menuAnchor}
-            toggleDrawer={toggleDrawer}
-          />
-        </Box>
-        <StyledLogoBox py={[0, 0, 2]}>
+        <StyledLogoBox py={2}>
           <StyledLogoTitle variant="subtitle1">{logoTitle}</StyledLogoTitle>
           <Typography variant="srOnly">{srLogoTitle}</Typography>
         </StyledLogoBox>
-      </Box>
-      <Box display={{ xs: "none", sm: "none", md: "block" }} px={2}>
-        <Divider variant="middle" light />
-        <MenuList menus={menuList} />
       </Box>
     </StyledHeader>
   );

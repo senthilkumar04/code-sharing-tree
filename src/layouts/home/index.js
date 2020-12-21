@@ -2,6 +2,7 @@ import React, { Component, Fragment, useState } from "react";
 import * as _ from "lodash";
 import { Element, Link, Events, scrollSpy } from 'react-scroll';
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
+import { useRouter } from 'next/router'
 
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
@@ -161,6 +162,11 @@ const TestimonialSection = ({ testimonials }) => {
     subTitle: 'What our recipients say about us',
     showDivider: true
   };
+  const router = useRouter();
+  const viewAllTestimonials = (e) => {
+    e.preventDefault();
+    router.push('/testimonials');
+  }
   const renderTestimonialList = (testimonials) => {
     return _.map(testimonials, (testimonial, index) => {
       const listKeyIndex = `testimonial-${index}`;
@@ -179,7 +185,7 @@ const TestimonialSection = ({ testimonials }) => {
             {renderTestimonialList(testimonials)}
           </Grid>
           <Box my={3} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-            <Button variant="contained" color="primary">View all</Button>
+            <Button variant="contained" color="primary" onClick={viewAllTestimonials}>View all</Button>
           </Box>
         </Box>
       </HomeSection>
@@ -195,6 +201,11 @@ const StoriesSection = ({ stories, scrollPosition }) => {
     subTitle: 'Get to know the sharing tree better',
     showDivider: true
   };
+  const router = useRouter();
+  const viewAllStories = (e) => {
+    e.preventDefault();
+    router.push('/stories');
+  }
   const theme = useTheme();
   const isExtraSmallDevice = useMediaQuery(theme.breakpoints.only('xs'));
   const isSmallDevice = useMediaQuery(theme.breakpoints.only('sm'));
@@ -203,44 +214,49 @@ const StoriesSection = ({ stories, scrollPosition }) => {
     <Fragment>
       <HomeSection config={config}>
         <Box display="flex" flexDirection="column" justifyContent="flex-start" mb={4}>
-          <GridList cellHeight={280} cols={noOfCols} spacing={20}>
-            <GridListTile>
-              <LazyLoadImage src={"img/feeding-the-hunger-story-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
-              <GridListTileBar
-                title={"Feeding the hungry"}
-                subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
-                actionIcon={
-                  <IconButton>
-                    <InfoIcon />
-                  </IconButton>
-                }
-              />
-            </GridListTile>
-            <GridListTile>
-              <LazyLoadImage src={"img/helping-people-heal-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
-              <GridListTileBar
-                title={"Feeding the hungry"}
-                subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
-                actionIcon={
-                  <IconButton>
-                    <InfoIcon />
-                  </IconButton>
-                }
-              />
-            </GridListTile>
-            <GridListTile>
-              <LazyLoadImage src={"img/making-dreams-come-true-story-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
-              <GridListTileBar
-                title={"Feeding the hungry"}
-                subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
-                actionIcon={
-                  <IconButton>
-                    <InfoIcon />
-                  </IconButton>
-                }
-              />
-            </GridListTile>
-          </GridList>
+          <Box mb={3}>
+            <GridList cellHeight={280} cols={noOfCols} spacing={20}>
+              <GridListTile>
+                <LazyLoadImage src={"img/feeding-the-hunger-story-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
+                <GridListTileBar
+                  title={"Feeding the hungry"}
+                  subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
+                  actionIcon={
+                    <IconButton>
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+              <GridListTile>
+                <LazyLoadImage src={"img/helping-people-heal-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
+                <GridListTileBar
+                  title={"Feeding the hungry"}
+                  subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
+                  actionIcon={
+                    <IconButton>
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+              <GridListTile>
+                <LazyLoadImage src={"img/making-dreams-come-true-story-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
+                <GridListTileBar
+                  title={"Feeding the hungry"}
+                  subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
+                  actionIcon={
+                    <IconButton>
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+            </GridList>
+          </Box>
+          <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+            <Button variant="contained" color="primary" onClick={viewAllStories}>View all</Button>
+          </Box>
         </Box>
       </HomeSection>
     </Fragment>
