@@ -59,7 +59,7 @@ export const StyledHomeMenuWrapper = styled(Box)(({ theme }) => {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: theme.palette.common.white,
     transform: 'translateY(0)',
     transition: 'transform 0.3s ease'
   }
