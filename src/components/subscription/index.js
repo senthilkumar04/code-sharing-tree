@@ -1,6 +1,6 @@
 import React from 'react'
 import * as _ from 'lodash';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Typography from '@material-ui/core/Typography';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -11,15 +11,16 @@ import Grid from '@material-ui/core/Grid';
 
 import { StyledSubscriptionContainer, StyledSubscriptionForm } from './subscription.styles';
 
-const StyledSubscriptionTextField = withStyles((theme) => {
+const useStyles = makeStyles((theme) => {
     return {
         root : {
             backgroundColor: theme.palette.common.white
         }
     }
-})(TextField);
+})
 
 const Subscription = (props) => {
+    const { root } = useStyles();
     const { data } = props;
     const title = _.get(data, 'title', 'Join our mailing list to keep up to date on the latest news.');
     const subscribeBtnLabel = _.get(data, 'subscribeBtnLabel', 'Join our mailing list to keep up to date on the latest news.');
@@ -36,12 +37,12 @@ const Subscription = (props) => {
                         <Grid container spacing={4}>
                             <Grid item xs={12} sm={6}>
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <StyledSubscriptionTextField fullWidth name="field-subscriber-name" label="Your name" variant="filled" />
+                                    <TextField fullWidth name="field-subscriber-name" label="Your name" variant="filled" className={root}/>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} >
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <StyledSubscriptionTextField fullWidth name="field-subscriber-email" label="Your email address" variant="filled" />
+                                    <TextField fullWidth name="field-subscriber-email" label="Your email address" variant="filled" className={root}/>
                                 </Box>
                             </Grid>
                             <Grid item xs={12}>

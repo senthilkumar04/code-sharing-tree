@@ -4,7 +4,7 @@ import Head from "next/head";
 
 /** Material UI imports */
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider, useTheme } from "@material-ui/core/styles";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 /** Layouts imports */
 import CommonLayout from "../layouts/common-layout";
@@ -12,7 +12,24 @@ import CommonLayout from "../layouts/common-layout";
 /** Components imports */
 
 export default function App({ Component, pageProps }) {
-  const theme = useTheme();
+
+  const theme = createMuiTheme({
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          html: {
+            height: '100%'
+          },
+          body: {
+            height: '100%'
+          },
+          '#__next': {
+            height: '100%'
+          }
+        },
+      },
+    },
+  });
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.

@@ -24,11 +24,11 @@ import Hidden from '@material-ui/core/Hidden';
 import Tooltip from '@material-ui/core/Tooltip';
 import CommentIcon from '@material-ui/icons/Comment';
 
-import { useTheme, makeStyles } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
+import StoryCard from "../../components/story-card";
 import Carousel from '../../components/carousel';
 
 import { StyledTeamAvatar, StyledAboutPaper, StyledAboutContent, StyledTileUnderline, StyledWhatWeDoImage, StyledHomeMenuWrapper, StyledHomeMenuItem } from "./home-layout.styles";
@@ -194,7 +194,7 @@ const TestimonialSection = ({ testimonials }) => {
   return null;
 }
 
-const StoriesSection = ({ stories, scrollPosition }) => {
+const StoriesSection = ({ stories }) => {
   const config = {
     title: 'Our stories',
     id: HOME_MENU_LIST.OUR_STORIES,
@@ -206,53 +206,24 @@ const StoriesSection = ({ stories, scrollPosition }) => {
     e.preventDefault();
     router.push('/stories');
   }
-  const theme = useTheme();
-  const isExtraSmallDevice = useMediaQuery(theme.breakpoints.only('xs'));
-  const isSmallDevice = useMediaQuery(theme.breakpoints.only('sm'));
-  const noOfCols = isExtraSmallDevice ? 1 : (isSmallDevice ? 2 : 3);
+  const renderStoryList = (stories) => {
+    return _.map(stories, (story, index) => {
+      const listKeyIndex = `story-${index}`;
+      return (
+        <Grid item xs={12} sm={6} md={4} lg={3} key={listKeyIndex}>
+          <StoryCard data={story} />
+        </Grid>
+      );
+    })
+  }
   return (
     <Fragment>
       <HomeSection config={config}>
         <Box display="flex" flexDirection="column" justifyContent="flex-start" mb={4}>
           <Box mb={3}>
-            <GridList cellHeight={280} cols={noOfCols} spacing={20}>
-              <GridListTile>
-                <LazyLoadImage src={"img/feeding-the-hunger-story-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
-                <GridListTileBar
-                  title={"Feeding the hungry"}
-                  subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
-                  actionIcon={
-                    <IconButton>
-                      <InfoIcon />
-                    </IconButton>
-                  }
-                />
-              </GridListTile>
-              <GridListTile>
-                <LazyLoadImage src={"img/helping-people-heal-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
-                <GridListTileBar
-                  title={"Feeding the hungry"}
-                  subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
-                  actionIcon={
-                    <IconButton>
-                      <InfoIcon />
-                    </IconButton>
-                  }
-                />
-              </GridListTile>
-              <GridListTile>
-                <LazyLoadImage src={"img/making-dreams-come-true-story-featured-image.jpg"} effect="blur" scrollPosition={scrollPosition} width={'100%'} />
-                <GridListTileBar
-                  title={"Feeding the hungry"}
-                  subtitle={<span>Sharing Tree made an annual contribution to the madras Prinjrapole, the house of old ,sick and</span>}
-                  actionIcon={
-                    <IconButton>
-                      <InfoIcon />
-                    </IconButton>
-                  }
-                />
-              </GridListTile>
-            </GridList>
+            <Grid container spacing={2} direction="row" justify="center" alignItems="center">
+              {renderStoryList(stories)}
+            </Grid>
           </Box>
           <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
             <Button variant="contained" color="primary" onClick={viewAllStories}>View all</Button>
@@ -398,7 +369,7 @@ class HomeLayout extends Component {
     Events.scrollEvent.remove('end');
   }
   render() {
-    const { subscription, teamList = [], testimonials = [], featuredBanner = [], aboutUs = null, whatWeDo = [] } = this.props;
+    const { subscription, teamList = [], testimonials = [], featuredBanner = [], aboutUs = null, whatWeDo = [], stories = [] } = this.props;
     const { ABOUT_US, WHAT_WE_DO, OUR_STORIES, OUR_TEAM, TESTIMONIALS } = HOME_MENU_LIST;
     const homeMenuList = [{'title': 'About us', 'url': ABOUT_US}, {'title': 'What we do', 'url': WHAT_WE_DO} , {'title': 'Our stories', 'url': OUR_STORIES}, {'title': 'Testimonials', 'url': TESTIMONIALS}, {'title': 'Our team', 'url': OUR_TEAM}];
     return(
@@ -407,7 +378,7 @@ class HomeLayout extends Component {
         <HomeMenu menuList={homeMenuList}/>
         <AboutUsSection aboutUs={aboutUs} {...this.props} />
         <WhatWeDoSection whatWeDo={whatWeDo} {...this.props} />
-        <StoriesSection {...this.props} />
+        <StoriesSection stories={stories} {...this.props} />
         <TestimonialSection testimonials={testimonials} {...this.props} />
         <TeamSection teamList={teamList} {...this.props} />
         <Subscription data={subscription} {...this.props} />

@@ -180,9 +180,11 @@ collections:
     folder: "contents/posts/story"
     create: true
     identifier_field: name
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Excerpt", name: "excerpt", widget: "text"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Excerpt', name: "excerpt", widget: 'string'}
+      - {label: 'Author', name: 'author', widget: 'string'}
+      - {label: 'Publish Date', name: 'date', widget: 'datetime'}
+      - {label: "Featured banner", name: "banner", widget: "image"}
+      - {label: "Story", name: "story", widget: "markdown"}
