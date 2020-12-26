@@ -179,7 +179,6 @@ collections:
     name: "stories"
     folder: "contents/posts/story"
     create: true
-    identifier_field: name
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
