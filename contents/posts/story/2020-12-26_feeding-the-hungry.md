@@ -18,7 +18,7 @@ story: >-
   Phasellus faucibus cursus lorem eget lacinia. Nunc porttitor magna neque. Nam sed convallis nisi. Cras quis volutpat massa. Fusce ac varius odio, nec euismod felis. Fusce dapibus nulla tincidunt commodo maximus. Mauris at elit vel purus malesuada posuere non et tellus. Duis efficitur turpis auctor, tincidunt dolor sed, convallis augue. Nulla nec pharetra est. 
 
 
-  <Typography variant="h1">Nunc nisi augue, fermentum commodo egestas nec, lobortis non ex. Nullam ac felis at lorem elementum tempus.</Typography>
+  <Typography variant="body2">Nunc nisi augue, fermentum commodo egestas nec, lobortis non ex. Nullam ac felis at lorem elementum tempus.</Typography>
 
 
   * POint 1
