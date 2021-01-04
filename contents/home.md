@@ -6,6 +6,12 @@ homeCarousel:
     showCTA: true
     ctaBtnLabel: Know more
     bannerImage: img/shutterstock_1013059525.jpg
+  - title: Sharing tree educates
+    subTitle: We help students with their education
+    description: This is a short desc
+    bannerImage: img/shutterstock_586935893.jpg
+    showCTA: false
+    ctaBtnLabel: Know more
 teamDetails:
   - memberTitle: mr
     memberName: K. M. Suceendran
