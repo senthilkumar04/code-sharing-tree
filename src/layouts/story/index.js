@@ -17,7 +17,7 @@ const OVVERIDES_CATEGORY = {
 
 const OptimizedImage = ({ src, layout, loading }) => {
     const modifiedImageSrc = `/${src}`;
-    return <Image src={modifiedImageSrc} layout={layout} loading={loading} width={'auto'} height={'auto'} />
+    return <img src={modifiedImageSrc} width={'100%'} height={'auto'} />
 }
 
 const formOverrideOptions = () => {
