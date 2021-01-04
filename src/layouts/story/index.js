@@ -17,7 +17,7 @@ const OVVERIDES_CATEGORY = {
 
 const OptimizedImage = ({ src, layout, loading }) => {
     const modifiedImageSrc = `/${src}`;
-    return <Image src={modifiedImageSrc} layout={layout} loading={loading} width="100%" heigh="auto" />
+    return <Image src={modifiedImageSrc} layout={layout} loading={loading} width={'auto'} height={'auto'} />
 }
 
 const formOverrideOptions = () => {
@@ -54,7 +54,7 @@ const getComponentOptions = (options) => {
             return {
                 component: OptimizedImage,
                 props: {
-                    loading: 'lazy'
+                    loading: 'lazy',
                 }
             }
         case OVVERIDES_CATEGORY.TYPO_COMPONENT:
