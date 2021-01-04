@@ -1,5 +1,6 @@
 import React from 'react';
 import * as _ from 'lodash';
+import { useRouter } from 'next/router'
 
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -10,10 +11,17 @@ import Typography from '@material-ui/core/Typography';
 import { StyledCardMedia } from './story-card.styles';
 
 const StoryCard = (props) => {
+    const router = useRouter();
     const { data } = props;
     const title = _.get(data, 'name', '');
     const image = _.get(data, 'thumbnail', null);
     const excerpt = _.get(data, 'excerpt', '');
+    const slug = _.get(data, 'slug', '')
+    const navigateToStory = () => {
+        if(slug) {
+            router.push(`/stories/${slug}`);
+        }
+    }
     return (
         <Card>
             <StyledCardMedia image={image} title={title} />
@@ -22,7 +30,7 @@ const StoryCard = (props) => {
                 <Typography variant="body2" color="textSecondary" component="p">{excerpt}</Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" color="primary">Learn More</Button>
+                <Button size="small" color="primary" onClick={navigateToStory}>Learn More</Button>
             </CardActions>
         </Card>
     );

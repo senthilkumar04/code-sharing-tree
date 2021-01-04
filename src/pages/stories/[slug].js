@@ -1,27 +1,29 @@
 import React from 'react';
+import * as _ from 'lodash';
 
 import StoryLayout from '../../layouts/story';
 
 /** Services imports */
 import { getNavigationMenuList } from '../../services/menu';
 import { getFooterWidgets } from '../../services/footer';
-import { getStories } from '../../services/stories';
+import { getStoryBySlug, getStoriesSlug } from '../../services/stories';
 
 export default function Story(props)  {
-    return <StoryLayout/>
+    const { story } = props
+    return <StoryLayout data={story}/>
 }
 
 export async function getStaticPaths() {
-    const stories = getStories();
-    const formStoryRoutes = (stories) => {
-        return _.map(stories, (story) => {
-            return null;
+    const storiesSlugList = getStoriesSlug();
+    const formStoryRoutes = (storiesSlugList) => {
+        return _.map(storiesSlugList, (slug) => {
+            return {
+                params: { slug }
+            };
         })
     }
     return {
-      paths: [
-        { params: { 'slug': 'abc' } }
-      ],
+      paths: formStoryRoutes(storiesSlugList),
       fallback: false
     };
 }
@@ -29,13 +31,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const menus = getNavigationMenuList();
     const footerWidgets = getFooterWidgets();
-    const stories = getStories();
+    const story = getStoryBySlug(params.slug);
     return {
         props: {
             menus,
             footerWidgets,
-            stories,
-            postData: params.slug
+            story
         }
     }
 }
