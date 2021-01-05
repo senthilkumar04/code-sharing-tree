@@ -24,14 +24,12 @@ import Hidden from '@material-ui/core/Hidden';
 import Tooltip from '@material-ui/core/Tooltip';
 import CommentIcon from '@material-ui/icons/Comment';
 
-import { makeStyles } from '@material-ui/core/styles';
-
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
 import StoryCard from "../../components/story-card";
 import Carousel from '../../components/carousel';
 
-import { StyledTeamAvatar, StyledAboutPaper, StyledAboutContent, StyledTileUnderline, StyledWhatWeDoImage, StyledHomeMenuWrapper, StyledHomeMenuItem } from "./home-layout.styles";
+import { StyledTeamAvatar, StyledAboutPaper, StyledAboutContent, StyledTileUnderline, StyledWhatWeDoImage, StyledHomeMenuWrapper, StyledHomeMenuItem, useHomeMenuStyles } from "./home-layout.styles";
 
 import { HOME_MENU_LIST } from '../../utils/constants';
 import { useDocumentScrollThrottled } from '../../utils/scrollThrottle';
@@ -287,20 +285,8 @@ const TeamSection = ({ teamList }) => {
 };
 
 const HomeMenu = ({ menuList }) => {
-  const useStyles = makeStyles((theme) => ({
-    shadow: {
-      boxShadow: '0 9px 9px -9px rgba(0, 0, 0, 0.13)'
-    },
-    fixed: {
-      position: 'fixed',
-      zIndex: 1
-    },
-    menuActive: {
-      borderBottom: `3px solid ${theme.palette.primary.main}`
-    }
-  }));
 
-  const {menuActive, shadow, fixed} = useStyles();
+  const {menuActive, shadow, fixed} = useHomeMenuStyles();
 
   const [shouldStickHeader, setShouldStickHeader] = useState(false);
   const [shouldShowShadow, setShouldShowShadow] = useState(false);

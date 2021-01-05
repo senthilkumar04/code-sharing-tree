@@ -1,4 +1,4 @@
-import { styled } from '@material-ui/styles';
+import { styled, makeStyles } from '@material-ui/styles';
 import Avatar from "@material-ui/core/Avatar";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
@@ -71,3 +71,16 @@ export const StyledHomeMenuItem = styled(Box)(({ theme }) => {
     cursor: 'pointer'
   }
 })
+
+export const useHomeMenuStyles = makeStyles((theme) => ({
+  shadow: {
+    boxShadow: '0 9px 9px -9px rgba(0, 0, 0, 0.13)'
+  },
+  fixed: {
+    position: 'fixed',
+    zIndex: 1
+  },
+  menuActive: {
+    borderBottom: `3px solid ${theme.palette.primary.main}`
+  }
+}));
