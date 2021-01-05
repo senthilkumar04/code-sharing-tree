@@ -3,7 +3,7 @@ import Proptypes from "prop-types";
 import Head from "next/head";
 
 /** Material UI imports */
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { CssBaseline } from "@material-ui/core";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 /** Layouts imports */

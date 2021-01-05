@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import * as _ from 'lodash';
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
-import Box from '@material-ui/core/Box';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { Box, Typography, Button } from '@material-ui/core';
+import { ArrowBack, ArrowForward } from '@material-ui/icons'
 
 import { StyledCarouselContent, StyledControlsBox, StyledImgWrapper, StyledControlBtn } from './carousel.styles';
 
@@ -50,12 +47,12 @@ class Carousel extends Component {
                 <StyledControlsBox>
                     <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" position="relative" p={2}>
                         <StyledControlBtn aria-label="Navigate to previous slide" onClick={this.navigateCarousel.bind(this, NAVIGATE_BWD)}>
-                            <ArrowBackIcon color="primary" />
+                            <ArrowBack color="primary" />
                         </StyledControlBtn>
                     </Box>
                     <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" position="relative" p={2}>
                         <StyledControlBtn aria-label="Navigate to next slide" onClick={this.navigateCarousel.bind(this, NAVIGATE_FWD)}>
-                            <ArrowForwardIcon color="primary" />
+                            <ArrowForward color="primary" />
                         </StyledControlBtn>
                     </Box>
                 </StyledControlsBox>

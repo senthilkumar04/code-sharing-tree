@@ -1,9 +1,8 @@
 import React, {Fragment} from 'react';
 
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import { Typography, Grid } from '@material-ui/core';
 
-import {StyledFooter, StyledCopyRightsBox, StyledFooterWidgetsBox} from './footer.styles';
+import { StyledFooter, StyledCopyRightsBox, StyledFooterWidgetsBox } from './footer.styles';
 
 import ReachUsWidget from '../widgets/reach-us/ReachUsWidget';
 import SocialLinksWidget from '../widgets/social-links/SocialLinks';

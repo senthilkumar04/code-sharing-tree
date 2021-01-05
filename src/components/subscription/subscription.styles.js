@@ -1,6 +1,6 @@
 import { styled } from '@material-ui/core/styles';
 
-import Box from '@material-ui/core/Box';
+import { Box } from '@material-ui/core';
 
 export const StyledSubscriptionContainer = styled(Box)(({ theme, bgdata }) => {
     const { backgroundImage, isBackgroundPattern } = bgdata;

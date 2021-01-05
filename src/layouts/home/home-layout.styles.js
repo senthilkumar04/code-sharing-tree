@@ -1,13 +1,10 @@
-import { styled, makeStyles } from '@material-ui/styles';
-import Avatar from "@material-ui/core/Avatar";
-import Paper from "@material-ui/core/Paper";
-import Box from "@material-ui/core/Box";
+import { styled, makeStyles } from '@material-ui/core/styles';
 
-export const StyledTeamAvatar = styled(Avatar)(({ theme }) => {
-  return {
-    width: `${theme.spacing(24)}px`,
-    height: `${theme.spacing(24)}px`,
-  };
+import { Avatar, Paper, Box } from '@material-ui/core';
+
+export const StyledTeamAvatar = styled(({ theme, ...other }) => <Avatar {...other}/>)({
+    width: `250px`,
+    height: `250px`
 });
 
 export const StyledAboutPaper = styled(Paper)(({ theme }) => {

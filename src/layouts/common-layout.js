@@ -1,7 +1,7 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 
-import Box from '@material-ui/core/Box';
+import { Box } from '@material-ui/core';
 
 import Header from '../components/header';
 import Footer from '../components/footer';

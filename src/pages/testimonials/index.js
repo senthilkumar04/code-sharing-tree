@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 
 import ListLayout from '../../layouts/list';
 
-
 import Testimonial from '../../components/testimonial';
 
 /** Services imports */

@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react';
 import * as _ from 'lodash';
 
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import { Typography, Box } from '@material-ui/core';
 
 const ReachUsWidget = ({ data }) => {
     const { widgetTitle = '', orgName, addressLine1, addressLine2, cityName, stateName, pincode, emailAddress } = data;

@@ -1,11 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
 import * as _ from 'lodash';
-import Image from 'next/image';
 
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import { Container, Box, Typography } from '@material-ui/core';
 
 import { StyledFeaturedImg } from './story-layout.styles';
 

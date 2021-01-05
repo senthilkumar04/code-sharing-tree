@@ -1,38 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import Box from "@material-ui/core/Box";
-import Divider from "@material-ui/core/Divider";
-import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Box, Typography } from '@material-ui/core';
 
 import {
   StyledHeader,
   StyledLogoBox,
-  StyledIconButton,
   StyledLogoTitle,
 } from "./header.styles";
 
-import MenuList from './MenuList';
-import MenuListDrawer from './MenuListDrawer';
-
 const Header = (props) => {
-  const { logoTitle, srLogoTitle, menuList } = props;
-  const [state, setState] = useState({
-    openDrawer: false,
-  });
-  const { openDrawer } = state;
-  const menuAnchor = "left";
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, openDrawer: open });
-  };
+  const { logoTitle, srLogoTitle } = props;
 
   return (
     <StyledHeader bgcolor="common.white">

@@ -1,8 +1,6 @@
-import Box from '@material-ui/core/Box';
-import IconButton from '@material-ui/core/IconButton';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
 import { styled } from '@material-ui/core/styles';
+
+import { Box, IconButton, ButtonBase, Typography } from '@material-ui/core';
 
 export const StyledLogoBox = styled(Box)(({ theme }) => {
     return {

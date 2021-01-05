@@ -1,6 +1,6 @@
 import { styled } from '@material-ui/core/styles';
 
-import Card from '@material-ui/core/Card';
+import { Card } from '@material-ui/core';
 
 export const StyledTestimonialCard = styled(Card)(({ theme }) => {
     return {

@@ -4,25 +4,8 @@ import { Element, Link, Events, scrollSpy } from 'react-scroll';
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 import { useRouter } from 'next/router'
 
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import Divider from "@material-ui/core/Divider";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import Button from '@material-ui/core/Button';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
-import PeopleIcon from '@material-ui/icons/People';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import WidgetsIcon from '@material-ui/icons/Widgets';
-import Hidden from '@material-ui/core/Hidden';
-import Tooltip from '@material-ui/core/Tooltip';
-import CommentIcon from '@material-ui/icons/Comment';
+import { Container, Box, Divider, Typography, Grid, Button, Hidden, Tooltip } from '@material-ui/core';
+import { WifiTethering, Visibility, Info, People, MenuBook, Widgets, Comment } from '@material-ui/icons';
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
@@ -99,7 +82,7 @@ const AboutUsSection = ({aboutUs}) => {
             <Grid item xs={12} sm={6}>
               <StyledAboutPaper>
                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                  <VisibilityIcon color="primary" fontSize="large"/>
+                  <Visibility color="primary" fontSize="large"/>
                   <Box fontSize="body1.fontSize" fontWeight={700} mb={1}>VISION</Box>
                   <Box fontSize="body2.fontSize" textAlign="center" lineHeight={1.8}>{visionDesc}</Box>
                 </Box>
@@ -108,7 +91,7 @@ const AboutUsSection = ({aboutUs}) => {
             <Grid item xs={12} sm={6}>
               <StyledAboutPaper>
                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                  <WifiTetheringIcon color="primary" fontSize="large"/>
+                  <WifiTethering color="primary" fontSize="large"/>
                   <Box fontSize="body1.fontSize" fontWeight={700} mb={1}>MISSION</Box>
                   <Box fontSize="body2.fontSize" textAlign="center" lineHeight={1.8}>{missionDesc}</Box>
                 </Box>
@@ -309,15 +292,15 @@ const HomeMenu = ({ menuList }) => {
   const getMenuIcon = (menuUrl) => {
     switch(menuUrl) {
       case HOME_MENU_LIST.ABOUT_US:
-        return <InfoIcon color="primary"/>;
+        return <Info color="primary"/>;
       case HOME_MENU_LIST.WHAT_WE_DO:
-        return <WidgetsIcon color="primary"/>;
+        return <Widgets color="primary"/>;
       case HOME_MENU_LIST.OUR_STORIES:
-        return <MenuBookIcon color="primary"/>;
+        return <MenuBook color="primary"/>;
       case HOME_MENU_LIST.OUR_TEAM:
-        return <PeopleIcon color="primary"/>;
+        return <People color="primary"/>;
       case HOME_MENU_LIST.TESTIMONIALS:
-        return <CommentIcon color="primary"/>
+        return <Comment color="primary"/>
     }
   }
 

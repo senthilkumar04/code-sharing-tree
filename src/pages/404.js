@@ -8,8 +8,7 @@ import { getNavigationMenuList } from '../services/menu';
 import { getFooterWidgets } from '../services/footer';
 
 /** Material UI imports */
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import { Container, Typography } from "@material-ui/core";
 
 class App404 extends Component {
     render() {

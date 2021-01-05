@@ -1,13 +1,10 @@
 import React from 'react';
 import * as _ from 'lodash';
 
-import Box from '@material-ui/core/Box';
-import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
-import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
+import { Box, CardContent, Avatar } from '@material-ui/core';
+import { FormatQuote } from '@material-ui/icons';
 
 import { StyledTestimonialCard } from './testimonial.styles';
-import { Typography } from '@material-ui/core';
 
 const Testimonial = (props) => {
     const { data } = props;
@@ -27,7 +24,7 @@ const Testimonial = (props) => {
     return (
         <StyledTestimonialCard>
             <CardContent>
-                <Box mb={2}><FormatQuoteIcon color="primary" fontSize="large" /></Box>
+                <Box mb={2}><FormatQuote color="primary" fontSize="large" /></Box>
                 <Box mb={2} fontSize="body2.fontSize">{description}</Box>
                 <Box display="flex" flexDirection="row">
                     {getThumbnail()}

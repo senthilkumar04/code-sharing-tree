@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
 
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
-
-import Pagination from '@material-ui/lab/Pagination';
+import { Container, Box, Grid, Divider, Typography } from '@material-ui/core';
+import { Pagination } from '@material-ui/lab';
 
 import { ListService } from '../../services/list';
 

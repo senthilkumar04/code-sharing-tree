@@ -2,12 +2,8 @@ import React from 'react'
 import * as _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Typography from '@material-ui/core/Typography';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import TextField from '@material-ui/core/TextField';
-import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import { Box, Typography, TextField, Button, Grid } from '@material-ui/core';
+import { Notifications } from '@material-ui/icons';
 
 import { StyledSubscriptionContainer, StyledSubscriptionForm } from './subscription.styles';
 
@@ -47,7 +43,7 @@ const Subscription = (props) => {
                             </Grid>
                             <Grid item xs={12}>
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <Button variant="contained" color="primary" size="large" type="submit" endIcon={<NotificationsIcon />}>{subscribeBtnLabel}</Button>
+                                    <Button variant="contained" color="primary" size="large" type="submit" endIcon={<Notifications />}>{subscribeBtnLabel}</Button>
                                 </Box>
                             </Grid>
                         </Grid>

@@ -1,8 +1,6 @@
 import { styled } from '@material-ui/core/styles';
 
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import IconButton from '@material-ui/core/IconButton';
+import { Grid, Box, IconButton } from '@material-ui/core';
 
 export const StyledAnimationGrid = styled(Grid)(({ theme }) => {
     return {
