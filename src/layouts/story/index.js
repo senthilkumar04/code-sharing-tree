@@ -13,8 +13,7 @@ const OVVERIDES_CATEGORY = {
 }
 
 const OptimizedImage = ({ src, layout, loading }) => {
-    const modifiedImageSrc = `/${src}`;
-    return <img src={modifiedImageSrc} width={'100%'} height={'auto'} />
+    return <img src={src} />
 }
 
 const formOverrideOptions = () => {
@@ -68,7 +67,7 @@ const markDownOptions = {
 }
 
 const FeaturedImgSection = ({image, altText}) => {
-    return <StyledFeaturedImg src={image} ariaabel={altText}  />
+    return <StyledFeaturedImg src={image} aria-label={altText}  />
 }
 
 const StoryTitleSection = ({ story }) => {
@@ -97,7 +96,7 @@ class StoryLayout extends Component {
         const content = _.get(data, 'content', '');
         return (
             <Fragment>
-                <FeaturedImgSection image={`../${thumbnail}`} altText={title} />
+                <FeaturedImgSection image={thumbnail} altText={title} />
                 <Container maxWidth="lg">
                     <StoryTitleSection story={data} />
                     <StoryContentSection story={content} />
