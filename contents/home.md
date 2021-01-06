@@ -16,19 +16,19 @@ teamDetails:
   - memberTitle: mr
     memberName: K. M. Suceendran
     memberRole: Trustee
-    memberAvatar: img/team-member-succendran.jpeg
+    memberAvatar: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609921528/2021/01/team-member-succendran-sharing-tree_hbturs.jpg
   - memberTitle: mr
     memberName: K. Jayaramakrishnan
     memberRole: Trustee
-    memberAvatar: img/team-member-jayaramakrishnan.jpeg
+    memberAvatar: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609921528/2021/01/team-member-succendran-sharing-tree_hbturs.jpg
   - memberTitle: mr
     memberName: K. N. Prabhakar
     memberRole: Managing Trustee
-    memberAvatar: img/team-member-succendran.jpeg
+    memberAvatar: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609921528/2021/01/team-member-succendran-sharing-tree_hbturs.jpg
   - memberTitle: mr
     memberName: Sridhar Swaminathan
     memberRole: Trustee
-    memberAvatar: img/team-member-succendran.jpeg
+    memberAvatar: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609921528/2021/01/team-member-succendran-sharing-tree_hbturs.jpg
 aboutUs:
   aboutUsImage: img/about-sharing-tree.png
   description: Sharing Tree, planted in Oct 2007 is a non profit charitable
