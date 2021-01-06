@@ -49,21 +49,21 @@ whatWeDo:
       provide them with an opportunity to make a position impact on the society
       as a whole. We are actively involved in identifying students who struggle
       financially and have other financial needs.
-    whatWeDoImage: img/we-educate.jpg
+    whatWeDoImage: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609904573/2021/01/what-we-do-we-educate-sharing-tree_iqoj0f.jpg
   - title: Feeding the Hungry
     description: "\"Annadhaanam\" is said to be the supreme form of charity. Sharing
       Tree organizes 'Annadhaanam - Feed the poor' Program in association with
       Aiyappa Seva Sangam by which we provide quality meals to more than 4500
       deprived people."
-    whatWeDoImage: img/feeding-hungry.jpg
+    whatWeDoImage: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609904623/2021/01/what-we-do-feeding-hungry-sharing-tree_kqmwfm.jpg
   - title: Help hurting people heal
     description: Sharing Tree touches lives of patients who suffer from various
       medical ailment by providing them financial aid. Sharing Tree in
       association with Lions Club provided medical assistance for patients.
-    whatWeDoImage: img/help-people-heel.jpg
+    whatWeDoImage: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609904677/2021/01/what-we-do-help-people-heel-sharing-tree_bod9to.jpg
   - title: We care for cows
     description: Sharing Tree believes that all living being deserve to live life by
       natural ways and humans should not determine their life span. We help cows
       live a good life by giving them nutritious food, medical care and love.
-    whatWeDoImage: img/care-for-cows.jpg
+    whatWeDoImage: https://res.cloudinary.com/dyk4hyu63/image/upload/q_auto:eco/v1609904738/2021/01/what-we-do-care-for-cows-sharing-tree_pvagcl.jpg
 ---
