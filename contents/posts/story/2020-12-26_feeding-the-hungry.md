@@ -26,22 +26,4 @@ story: >-
   * Point 2
 
   * Point 3
-
-
-  `sdfslkjlkjlklsjdflkj lsjkdlfkjsdfsdf`
-
-
-  ```
-
-  <html>
-
-  <body>
-
-  It works
-
-  </body>
-
-  </html>
-
-  ```
 ---
