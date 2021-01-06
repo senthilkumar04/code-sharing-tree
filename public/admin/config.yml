@@ -4,6 +4,11 @@ backend:
 local_backend: true
 media_folder: public/img
 public_folder: img
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dyk4hyu63
+    api_key: 432965381271226
 collections:
   - name: 'pages'
     label: 'Pages'
