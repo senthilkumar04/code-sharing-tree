@@ -5,11 +5,11 @@ homeCarousel:
     description: This is a shot desc
     showCTA: true
     ctaBtnLabel: Know more
-    bannerImage: img/shutterstock_1013059525.jpg
+    bannerImage: https://res.cloudinary.com/dyk4hyu63/image/upload/c_scale,q_auto:eco,w_1920/v1609904206/2021/01/home-banner-sharing-tree-feeds_msil14.jpg
   - title: Sharing tree educates
     subTitle: We help students with their education
     description: This is a short desc
-    bannerImage: img/shutterstock_586935893.jpg
+    bannerImage: https://res.cloudinary.com/dyk4hyu63/image/upload/c_scale,q_auto:eco,w_1920/v1609904459/2021/01/home-banner-sharing-tree-educates_eqvdrs.jpg
     showCTA: false
     ctaBtnLabel: Know more
 teamDetails:
