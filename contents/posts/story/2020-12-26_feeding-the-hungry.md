@@ -4,7 +4,7 @@ excerpt: Sharing Tree made an annual contribution to the madras Prinjrapole, the
   house of old ,sick and
 author: Senthilkumar
 date: 2020-12-26T12:10:24.668Z
-banner: img/feeding-the-hunger-story-featured-image.jpg
+banner: https://res.cloudinary.com/dyk4hyu63/image/upload/c_scale,q_auto:eco,w_1280/v1609902650/2021/01/feeding-the-hunger-story-featured-image_uyancj.jpg
 story: >-
   ###### Hi This is a Heading
 
