@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Container } from '@material-ui/core';
 
 import { StyledFooter, StyledCopyRightsBox, StyledFooterWidgetsBox } from './footer.styles';
 
@@ -29,19 +29,21 @@ const Footer = ({ widgets }) => {
     return (
         <Fragment>
             <StyledFooter display="flex" flexDirection="column">
-                <StyledFooterWidgetsBox>
-                    <Grid container>
-                        <Grid item xs={12} sm={4}>
-                            {mapFooterWidgets(column1)}
+                <Container maxWidth="lg">
+                    <StyledFooterWidgetsBox>
+                        <Grid container>
+                            <Grid item xs={12} sm={4}>
+                                {mapFooterWidgets(column1)}
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
+                                {mapFooterWidgets(column2)}
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
+                                {mapFooterWidgets(column3)}
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            {mapFooterWidgets(column2)}
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            {mapFooterWidgets(column3)}
-                        </Grid>
-                    </Grid>
-                </StyledFooterWidgetsBox>
+                    </StyledFooterWidgetsBox>
+                </Container>
                 <StyledCopyRightsBox>
                     <Typography variant="body2">&copy; Copyright 2020 Sharing Tree Trust.</Typography>
                 </StyledCopyRightsBox>
