@@ -57,7 +57,7 @@ class FAQLayout extends Component {
             <Container maxWidth="lg">
                 <Box mt={4} display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start">
                     <Typography variant="h5" component="h1">{title}</Typography>
-                    <Typography variant="body1" color="textSecondary">{subTitle}</Typography>
+                    <Typography variant="body2" color="textSecondary">{subTitle}</Typography>
                     <StyledTileUnderline/>
                 </Box>
                 <Box my={[0, 0, 2]}>
