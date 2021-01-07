@@ -11,10 +11,10 @@ reachUsWidget:
   addressLine1: New no 22, Old no 10,
   addressLine2: 1st main road, Nanganallur,
   orgName: Sharing tree - The Trust
-  widgetTitle: Reach us at
+  widgetTitle: We are at
   cityName: Chennai
-  phoneNumber: "#"
-  emailAddress: sharing.tree@gmail.com
+  phoneNumber: ""
+  emailAddress: ""
   stateName: Tamil Nadu
 quickLinkWidget:
   widgetTitle: Important links
