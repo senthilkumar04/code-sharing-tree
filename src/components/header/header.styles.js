@@ -58,5 +58,6 @@ export const StyledHeader = styled(Box)(({ theme }) => {
         borderBottom: `3px`,
         borderBottomStyle: 'solid',
         borderBottomColor: theme.palette.primary.main,
+        flex: '1 0 auto'
     }
 })

@@ -6,6 +6,7 @@ export const StyledFooter = styled(Box)(({ theme }) => {
     return {
         color: theme.palette.common.white,
         backgroundColor: theme.palette.grey[900],
+        flex: '1 0 auto'
     }
 })
 
