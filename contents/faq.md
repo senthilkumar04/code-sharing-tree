@@ -1,6 +1,6 @@
 ---
-title: Frequently Asked Questions
-subtitle: Below are the frequently asked questions
+title: Frequently Asked Questions ?
+subtitle: Find out answers for your queries
 faqImage: https://res.cloudinary.com/dyk4hyu63/image/upload/v1609997368/2021/01/sharing-tree-faq-illustration_iqhppc.svg
 faqList:
   - question: Question 1
