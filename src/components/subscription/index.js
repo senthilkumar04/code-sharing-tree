@@ -26,8 +26,8 @@ const Subscription = (props) => {
     const bgDetails = { backgroundImage, isBackgroundPattern }
     return (
         <StyledSubscriptionContainer bgdata={bgDetails}>
-                <Box zIndex="tooltip"><Typography variant="h6" component="h2">{title}</Typography></Box>
-                <Box zIndex="tooltip" mt={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
+                <Box><Typography variant="h6" component="h2">{title}</Typography></Box>
+                <Box mt={4} display="flex" flexDirection="column" alignSelf="stretch" justifyContent="center">
                     <StyledSubscriptionForm autoComplete="off" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact" />
                         <Grid container spacing={4}>
