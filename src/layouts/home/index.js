@@ -1,8 +1,7 @@
 import React, { Component, Fragment, useState } from "react";
 import * as _ from "lodash";
 import { Element, Link, Events, scrollSpy } from 'react-scroll';
-import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 import { Container, Box, Divider, Typography, Grid, Button, Hidden, Tooltip } from '@material-ui/core';
 import { WifiTethering, Visibility, Info, People, MenuBook, Widgets, Comment } from '@material-ui/icons';
@@ -356,4 +355,4 @@ class HomeLayout extends Component {
   }
 }
 
-export default trackWindowScroll(HomeLayout);
+export default HomeLayout;

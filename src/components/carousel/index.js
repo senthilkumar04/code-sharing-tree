@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as _ from 'lodash';
-import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
 import { Box, Typography, Button } from '@material-ui/core';
 import { ArrowBack, ArrowForward } from '@material-ui/icons'

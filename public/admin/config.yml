@@ -76,6 +76,24 @@ collections:
               media_library:
                 config:
                   multiple: false
+    - label: 'FAQ'
+      name: 'FAQ'
+      file: 'contents/faq.md'
+      fields:
+        - {label: 'Page title', name: 'title', widget: 'string'}
+        - {label: 'Page subtitle', name: 'subtitle', widget: 'string'}
+        - label: 'Page illustration'
+          name: 'faqImage'
+          widget: 'image'
+          media_library:
+            config:
+              multiple: false
+        - label: 'FAQ list'
+          name: 'faqList'
+          widget: 'list'
+          fields:
+            - {label: "Question", name: "question", widget: "string"}
+            - {label: "Answer", name: "answer", widget: "text"}
 
   - name: 'settings'
     label: 'Settings'
