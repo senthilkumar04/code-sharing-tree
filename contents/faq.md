@@ -1,5 +1,5 @@
 ---
-title: FAQ
+title: Frequently Asked Questions
 subtitle: Below are the frequently asked questions
 faqImage: https://res.cloudinary.com/dyk4hyu63/image/upload/v1609997368/2021/01/sharing-tree-faq-illustration_iqhppc.svg
 faqList:
