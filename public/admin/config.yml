@@ -102,8 +102,14 @@ collections:
         name: 'generalSettings'
         file: 'contents/settings/general.md'
         fields:
-          - {label: 'Website title', name: 'site_title', widget: 'string'}
-          - {label: Logo alternate title, name: logo_alt_Title, widget: string}
+          - {label: 'Website title', name: 'siteTitle', widget: 'string'}
+          - {label: Logo alternate title, name: 'altTitle', widget: 'string'}
+          - label: 'Logo'
+            name: 'logo'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
       - label: 'Widgets'
         name: 'widgets'
         file: 'contents/settings/widgets.md'

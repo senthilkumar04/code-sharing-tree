@@ -3,8 +3,8 @@ import * as _ from "lodash";
 import { Element, Link, Events, scrollSpy } from 'react-scroll';
 import { useRouter } from 'next/router';
 
-import { Container, Box, Divider, Typography, Grid, Button, Hidden, Tooltip } from '@material-ui/core';
-import { WifiTethering, Visibility, Info, People, MenuBook, Widgets, Comment } from '@material-ui/icons';
+import { Container, Box, Divider, Typography, Grid, Button, Hidden, Tooltip, Dialog, DialogTitle, DialogContent, IconButton } from '@material-ui/core';
+import { WifiTethering, Visibility, Info, People, MenuBook, Widgets, Comment, Close } from '@material-ui/icons';
 
 import Subscription from "../../components/subscription";
 import Testimonial from "../../components/testimonial";
@@ -214,7 +214,7 @@ const StoriesSection = ({ stories }) => {
   )
 }
 
-const TeamSection = ({ teamList }) => {
+const TeamSection = ({ teamList, handleOpen }) => {
   const config = {
     title: 'Our Team',
     id: HOME_MENU_LIST.OUR_TEAM,
@@ -245,9 +245,9 @@ const TeamSection = ({ teamList }) => {
               justifyContent="center"
               alignItems="center"
             >
-              <Typography variant="subtitle2" display="block">
+              <Button onClick={handleOpen} display="block" color="primary">
                 {memberName}
-              </Typography>
+              </Button>
               <Typography variant="caption" display="block">
                 {memberRole}
               </Typography>
@@ -326,7 +326,35 @@ const HomeMenu = ({ menuList }) => {
   )
 }
 
+const TeamMemberDialog = ({ handleClose, open }) => {
+  return (
+    <Dialog onClose={handleClose} open={open}>
+      <DialogTitle>
+        Modal title
+      </DialogTitle>
+      <DialogContent dividers>
+        <Typography gutterBottom>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+          in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </Typography>
+        <Typography gutterBottom>
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+          lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </Typography>
+        <Typography gutterBottom>
+          Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+          scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+          auctor fringilla.
+        </Typography>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 class HomeLayout extends Component {
+  state = {
+    dialogOpen: false
+  }
   componentDidMount() {
     Events.scrollEvent.register('begin');
     Events.scrollEvent.register('end');
@@ -338,21 +366,29 @@ class HomeLayout extends Component {
   }
   render() {
     const { subscription, teamList = [], testimonials = [], featuredBanner = [], aboutUs = null, whatWeDo = [], stories = [] } = this.props;
+    const { dialogOpen } = this.state;
     const { ABOUT_US, WHAT_WE_DO, OUR_STORIES, OUR_TEAM, TESTIMONIALS } = HOME_MENU_LIST;
     const homeMenuList = [{'title': 'About us', 'url': ABOUT_US}, {'title': 'What we do', 'url': WHAT_WE_DO} , {'title': 'Our stories', 'url': OUR_STORIES}, {'title': 'Testimonials', 'url': TESTIMONIALS}, {'title': 'Our team', 'url': OUR_TEAM}];
     return(
       <Fragment>
+        <TeamMemberDialog open={dialogOpen} handleClose={this.handleDialogClose.bind(this)} />
         <HomeCarousel carouselData={featuredBanner} {...this.props} />
         <HomeMenu menuList={homeMenuList}/>
         <AboutUsSection aboutUs={aboutUs} {...this.props} />
         <WhatWeDoSection whatWeDo={whatWeDo} {...this.props} />
         <StoriesSection stories={stories} {...this.props} />
         <TestimonialSection testimonials={testimonials} {...this.props} />
-        <TeamSection teamList={teamList} {...this.props} />
+        <TeamSection teamList={teamList} handleOpen={this.handleDialogOpen.bind(this)} {...this.props} />
         <Subscription data={subscription} {...this.props} />
       </Fragment>
     )
   }
+  handleDialogClose() {
+    this.setState({ dialogOpen: false });
+  };
+  handleDialogOpen() {
+    this.setState({ dialogOpen: true });
+  };
 }
 
 export default HomeLayout;
