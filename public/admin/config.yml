@@ -82,19 +82,21 @@ collections:
       fields:
         - {label: 'Page title', name: 'title', widget: 'string'}
         - {label: 'Page subtitle', name: 'subtitle', widget: 'string'}
-        - label: 'Page illustration'
-          name: 'faqImage'
-          widget: 'image'
-          media_library:
-            config:
-              multiple: false
+        - {label: 'Page description', name: 'description', widget: 'text'}
         - label: 'FAQ list'
           name: 'faqList'
           widget: 'list'
           fields:
             - {label: "Question", name: "question", widget: "string"}
-            - {label: "Answer", name: "answer", widget: "text"}
-
+            - {label: 'Answer', name: 'answer', widget: 'markdown'}
+    - label: 'Privacy policy'
+      name: 'privacyPolicy'
+      file: 'contents/privacy.md'
+      fields:
+        - {label: 'Page title', name: 'title', widget: 'string'}
+        - {label: 'Page subtitle', name: 'subtitle', widget: 'string'}
+        - {label: 'Policy', name: 'policy', widget: 'markdown'}
+        
   - name: 'settings'
     label: 'Settings'
     files:

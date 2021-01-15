@@ -10,9 +10,9 @@ const mapFAQData = (data) => {
     if(data) {
         const title = _.get(data, 'title', DEFAULT_FAQ_TITLE);
         const subTitle = _.get(data, 'subtitle', DEFAULT_FAQ_SUBTITLE);
-        const featuredImage = _.get(data, 'faqImage', null);
         const list = _.get(data, 'faqList', []);
-        return { title, subTitle, featuredImage, list };
+        const desc = _.get(data, 'description', '');
+        return { title, subTitle, list, desc };
     }
     return null;
 }

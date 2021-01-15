@@ -12,7 +12,7 @@ const OVVERIDES_CATEGORY = {
     TYPO_COMPONENT: 'TYPO_COMPONENT'
 }
 
-const OptimizedImage = ({ src, layout, loading }) => {
+const OptimizedImage = ({ src }) => {
     return <img src={src} />
 }
 

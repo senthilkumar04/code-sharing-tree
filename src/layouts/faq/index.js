@@ -5,7 +5,7 @@ import { Container, Grid, Box, ExpansionPanel, ExpansionPanelSummary, ExpansionP
 import { Pagination } from '@material-ui/lab';
 import { ExpandMore } from '@material-ui/icons';
 
-import { StyledFAQImage, StyledTileUnderline } from './faq-layout.styles';
+import { StyledTileUnderline } from '../common';
 
 import { ListService } from '../../services/list';
 
@@ -52,7 +52,7 @@ class FAQLayout extends Component {
 
     render() {
         const { currentListData, expanded } = this.state;
-        const { data: { title, subTitle, featuredImage } } = this.props;
+        const { data: { title, subTitle, desc } } = this.props;
         return (
             <Container maxWidth="lg">
                 <Box mt={4} display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start">
@@ -61,15 +61,9 @@ class FAQLayout extends Component {
                     <StyledTileUnderline/>
                 </Box>
                 <Box my={[0, 0, 2]}>
+                    { desc && <Typography variant="body2" gutterBottom>{desc}</Typography>}
                     <Grid container spacing={4}>
-                        {
-                            featuredImage && <Hidden smDown>
-                            <Grid item xs={12} md={6}>
-                                    <StyledFAQImage src={featuredImage} />
-                                </Grid>
-                            </Hidden>
-                        }
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12}>
                             <Box my={4}>
                             {
                                 _.map(currentListData, (listItem, index) => {
