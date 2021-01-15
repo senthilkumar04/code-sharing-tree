@@ -9,7 +9,7 @@ policy: >-
   This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://sharingtreetrust.netlify.app (the “Site”).
 
 
-  ###### PERSONAL INFORMATION WE COLLECT
+  PERSONAL INFORMATION WE COLLECT
 
 
   When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We refer to this automatically-collected information as “Device Information.”
@@ -70,11 +70,13 @@ policy: >-
 
   DO NOT TRACK
 
+
   Please note that we do not alter our Site’s data collection and use practices when we see a Do Not Track signal from your browser.
 
 
 
   YOUR RIGHTS
+
 
   If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us through the contact information below.
 
@@ -84,15 +86,18 @@ policy: >-
 
   DATA RETENTION
 
+
   When you place an order through the Site, we will maintain your Order Information for our records unless and until you ask us to delete this information.
 
 
   CHANGES
 
+
   We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.
 
 
   CONTACT US
+
 
   For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at senthilkumar.cse04@gmail.com or by mail using the details provided below:
 
