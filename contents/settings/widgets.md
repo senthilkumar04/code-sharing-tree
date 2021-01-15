@@ -23,7 +23,7 @@ quickLinkWidget:
     - title: FAQ
       url: faq
     - title: Privacy policy
-      url: privacy-policy
+      url: privacy
     - title: Terms & Conditions
       url: terms-conditions
 ---
