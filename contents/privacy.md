@@ -3,7 +3,7 @@ title: Privacy policy
 subtitle: Learn more about how Sharing tree collects and uses data and your
   rights as a Sharing tree user.
 policy: >-
-  Sharing tree Privacy Policy
+  **Sharing tree Privacy Policy**
 
 
   This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://sharingtreetrust.netlify.app (the “Site”).
