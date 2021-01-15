@@ -8,4 +8,6 @@ footerColumnLayout:
   column1Widget: socialWidget
   column2Widget: reachUsWidget
   column3Widget: quickLinkWidget
+siteTitle: Sharing tree - The Trust
+altTitle: Sharing Tree, The Trust, Tap to navigate to home page
 ---
