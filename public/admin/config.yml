@@ -55,12 +55,6 @@ collections:
           name: 'aboutUs'
           widget: 'object'
           fields:
-            - label: 'About us image'
-              name: 'aboutUsImage'
-              widget: 'image'
-              media_library:
-                config:
-                  multiple: false
             - {label: 'Description', name: 'description', widget: 'text'}
             - {label: 'Vision', name: 'visionDesc', widget: 'string'}
             - {label: 'Mission', name: 'missionDesc', widget: 'string'}

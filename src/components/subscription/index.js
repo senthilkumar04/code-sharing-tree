@@ -33,12 +33,12 @@ const Subscription = (props) => {
                         <Grid container spacing={4}>
                             <Grid item xs={12} sm={6}>
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <TextField fullWidth name="field-subscriber-name" label="Your name" variant="filled" className={root}/>
+                                    <TextField fullWidth name="field-subscriber-name" label="Your name" variant="filled" className={root} required/>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} >
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                    <TextField fullWidth name="field-subscriber-email" label="Your email address" variant="filled" className={root}/>
+                                    <TextField fullWidth name="field-subscriber-email" label="Your email address" variant="filled" className={root} required/>
                                 </Box>
                             </Grid>
                             <Grid item xs={12}>
