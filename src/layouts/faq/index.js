@@ -52,40 +52,44 @@ class FAQLayout extends Component {
 
     render() {
         const { currentListData, expanded } = this.state;
-        const { data: { title, subTitle, desc } } = this.props;
-        return (
-            <Container maxWidth="lg">
-                <Box mt={4} display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start">
-                    <Typography variant="h5" component="h1">{title}</Typography>
-                    <Typography variant="body2" color="textSecondary">{subTitle}</Typography>
-                    <StyledTileUnderline/>
-                </Box>
-                <Box my={[0, 0, 2]}>
-                    { desc && <Typography variant="body2" gutterBottom>{desc}</Typography>}
-                    <Grid container spacing={4}>
-                        <Grid item xs={12}>
-                            <Box my={4}>
-                            {
-                                _.map(currentListData, (listItem, index) => {
-                                    const keyIndex = `faq-${index}`;
-                                    return (
-                                        <FAQSection data={listItem} key={keyIndex} keyIndex={keyIndex} onChange={this.handleAccordianChange.bind(this)} expanded={expanded} />
-                                    );
-                                })
-                            }
-                            {
-                                (this.pageTotal > 1) && (
-                                    <Box p={4} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-                                        <Pagination count={this.pageTotal} page={this.state.currentPage} onChange={this.handlePageChange.bind(this)} />
-                                    </Box>
-                                )
-                            }
-                            </Box>
+        const { data = null } = this.props;
+        if(data) {
+            const { title, subTitle, desc } = data;
+            return (
+                <Container maxWidth="lg">
+                    <Box mt={4} display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start">
+                        <Typography variant="h5" component="h1">{title}</Typography>
+                        <Typography variant="body2" color="textSecondary">{subTitle}</Typography>
+                        <StyledTileUnderline/>
+                    </Box>
+                    <Box my={[0, 0, 2]}>
+                        { desc && <Typography variant="body2" gutterBottom>{desc}</Typography>}
+                        <Grid container spacing={4}>
+                            <Grid item xs={12}>
+                                <Box my={4}>
+                                {
+                                    _.map(currentListData, (listItem, index) => {
+                                        const keyIndex = `faq-${index}`;
+                                        return (
+                                            <FAQSection data={listItem} key={keyIndex} keyIndex={keyIndex} onChange={this.handleAccordianChange.bind(this)} expanded={expanded} />
+                                        );
+                                    })
+                                }
+                                {
+                                    (this.pageTotal > 1) && (
+                                        <Box p={4} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                                            <Pagination count={this.pageTotal} page={this.state.currentPage} onChange={this.handlePageChange.bind(this)} />
+                                        </Box>
+                                    )
+                                }
+                                </Box>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </Box>
-            </Container>
-        );
+                    </Box>
+                </Container>
+            );
+        }
+        
     }
 
     initializeListService(props) {
