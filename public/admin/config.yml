@@ -98,15 +98,18 @@ collections:
         name: 'generalSettings'
         file: 'contents/settings/general.md'
         fields:
-          - {label: 'Website title', name: 'siteTitle', widget: 'string'}
-          - {label: Logo alternate title, name: 'altTitle', widget: 'string'}
+          - {label: 'Website title', name: 'siteTitle', widget: 'string', required: true}
+          - {label: 'Website Accessible title', name: 'siteAccessTitle', widget: 'string', required: true}
+          - {label: Logo alternate title, name: 'logoAltTitle', widget: 'string', required: false}
           - label: 'Logo'
-            name: 'logo'
+            name: 'logoUrl'
             widget: 'image'
             required: false
             media_library:
               config:
                 multiple: false
+          - {label: Logo width, name: 'logoWidth', widget: 'string', required: false}
+          - {label: Logo height, name: 'logoHeight', widget: 'string', required: false}
       - label: 'Widgets'
         name: 'widgets'
         file: 'contents/settings/widgets.md'
