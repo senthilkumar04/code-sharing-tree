@@ -28,7 +28,7 @@ const Footer = ({ widgets }) => {
 
     return (
         <Fragment>
-            <StyledFooter display="flex" flexDirection="column">
+            <StyledFooter>
                 <Container maxWidth="lg">
                     <StyledFooterWidgetsBox>
                         <Grid container>

@@ -13,8 +13,8 @@ const Header = (props) => {
   const { logoTitle, srLogoTitle } = props;
 
   return (
-    <StyledHeader display="flex" flexDirection="row" alignItems="center" justifyContent="flex-start" px={1}>
-        <StyledLogoBox py={2}>
+    <StyledHeader px={1}>
+        <StyledLogoBox display="flex" flexDirection="row" alignItems="center" justifyContent="center" py={2}>
           <StyledLogoTitle variant="subtitle1">{logoTitle}</StyledLogoTitle>
           <Typography variant="srOnly">{srLogoTitle}</Typography>
         </StyledLogoBox>

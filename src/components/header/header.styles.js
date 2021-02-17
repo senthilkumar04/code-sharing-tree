@@ -57,7 +57,6 @@ export const StyledHeader = styled(Box)(({ theme }) => {
         backgroundColor: theme.palette.common.white,
         borderBottom: `3px`,
         borderBottomStyle: 'solid',
-        borderBottomColor: theme.palette.primary.main,
-        flex: '1 0 auto'
+        borderBottomColor: theme.palette.primary.main
     }
 })
