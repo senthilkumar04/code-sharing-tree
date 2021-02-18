@@ -108,8 +108,8 @@ collections:
             media_library:
               config:
                 multiple: false
-          - {label: Logo width, name: 'logoWidth', widget: 'string', required: false}
-          - {label: Logo height, name: 'logoHeight', widget: 'string', required: false}
+          - {label: Logo width, name: 'logoWidth', widget: 'string', required: false, default: '150'}
+          - {label: Logo height, name: 'logoHeight', widget: 'string', required: false, default: '50'}
       - label: 'Widgets'
         name: 'widgets'
         file: 'contents/settings/widgets.md'
