@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: senthilkumar04/code-sharing-tree
   branch: master
 local_backend: true
 media_folder: public/img
@@ -10,193 +11,304 @@ media_library:
     cloud_name: dyk4hyu63
     api_key: 432965381271226
 collections:
-  - name: 'pages'
-    label: 'Pages'
+  - name: "pages"
+    label: "Pages"
     files:
-    - label: 'Home'
-      name: 'home'
-      file: 'contents/home.md'
-      fields:
-        - label: 'Home Banner Carousel'
-          name: 'homeCarousel'
-          widget: 'list'
-          fields:
-            - {label: 'Title', name: 'title', widget: 'string'}
-            - {label: 'Subtitle', name: 'subTitle', widget: 'string' }
-            - {label: 'Short description', name: 'description', widget: 'text' }
-            - {label: 'Show CTA', name: 'showCTA', widget: 'boolean' }
-            - {label: 'CTA button label', name: 'ctaBtnLabel', widget: 'string'}
-            - label: 'Banner image'
-              name: 'bannerImage'
-              widget: 'image'
-              media_library:
-                config:
-                  multiple: false
-        - label: 'Team details'
-          name: 'teamDetails'
-          widget: 'list'
-          fields:
-              - {label: "Member name", name: "memberName", widget: "string"}
-              - label: 'Member title'
-                name: 'memberTitle'
-                widget: 'select'
+      - label: "Home"
+        name: "home"
+        file: "contents/home.md"
+        fields:
+          - label: "Home Banner Carousel"
+            name: "homeCarousel"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subTitle", widget: "string" }
+              - {
+                  label: "Short description",
+                  name: "description",
+                  widget: "text",
+                }
+              - { label: "Show CTA", name: "showCTA", widget: "boolean" }
+              - {
+                  label: "CTA button label",
+                  name: "ctaBtnLabel",
+                  widget: "string",
+                }
+              - label: "Banner image"
+                name: "bannerImage"
+                widget: "image"
+                media_library:
+                  config:
+                    multiple: false
+          - label: "Team details"
+            name: "teamDetails"
+            widget: "list"
+            fields:
+              - { label: "Member name", name: "memberName", widget: "string" }
+              - label: "Member title"
+                name: "memberTitle"
+                widget: "select"
                 options:
                   - { label: "Mr", value: "mr" }
                   - { label: "Mrs", value: "mrs" }
                 default: [{ label: "Mr", value: "mr" }]
-              - {label: "Member role", name: "memberRole", widget: "string"}
-              - label: 'Team Member Image'
-                name: 'memberAvatar'
-                widget: 'image'
+              - { label: "Member role", name: "memberRole", widget: "string" }
+              - label: "Team Member Image"
+                name: "memberAvatar"
+                widget: "image"
                 media_library:
                   config:
                     multiple: false
-        - label: 'About us'
-          name: 'aboutUs'
-          widget: 'object'
-          fields:
-            - {label: 'Description', name: 'description', widget: 'text'}
-            - {label: 'Vision', name: 'visionDesc', widget: 'string'}
-            - {label: 'Mission', name: 'missionDesc', widget: 'string'}
-        - label: 'What we do'
-          name: 'whatWeDo'
-          widget: 'list'
-          fields:
-            - {label: 'Title', name: 'title', widget: 'string'}
-            - {label: 'Description', name: 'description', widget: 'text'}
-            - label: 'What we do image'
-              name: 'whatWeDoImage'
-              widget: 'image'
-              media_library:
-                config:
-                  multiple: false
-    - label: 'FAQ'
-      name: 'FAQ'
-      file: 'contents/faq.md'
-      fields:
-        - {label: 'Page title', name: 'title', widget: 'string'}
-        - {label: 'Page subtitle', name: 'subtitle', widget: 'string'}
-        - {label: 'Page description', name: 'description', widget: 'text'}
-        - label: 'FAQ list'
-          name: 'faqList'
-          widget: 'list'
-          fields:
-            - {label: "Question", name: "question", widget: "string"}
-            - {label: 'Answer', name: 'answer', widget: 'markdown'}
-    - label: 'Privacy policy'
-      name: 'privacyPolicy'
-      file: 'contents/privacy.md'
-      fields:
-        - {label: 'Page title', name: 'title', widget: 'string'}
-        - {label: 'Page subtitle', name: 'subtitle', widget: 'string'}
-        - {label: 'Policy', name: 'policy', widget: 'markdown'}
-        
-  - name: 'settings'
-    label: 'Settings'
-    files:
-      - label: 'General'
-        name: 'generalSettings'
-        file: 'contents/settings/general.md'
+          - label: "About us"
+            name: "aboutUs"
+            widget: "object"
+            fields:
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Vision", name: "visionDesc", widget: "string" }
+              - { label: "Mission", name: "missionDesc", widget: "string" }
+          - label: "What we do"
+            name: "whatWeDo"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "What we do image"
+                name: "whatWeDoImage"
+                widget: "image"
+                media_library:
+                  config:
+                    multiple: false
+      - label: "FAQ"
+        name: "FAQ"
+        file: "contents/faq.md"
         fields:
-          - {label: 'Website title', name: 'siteTitle', widget: 'string'}
-          - {label: Logo alternate title, name: 'altTitle', widget: 'string'}
-          - label: 'Logo'
-            name: 'logo'
-            widget: 'image'
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Page subtitle", name: "subtitle", widget: "string" }
+          - { label: "Page description", name: "description", widget: "text" }
+          - label: "FAQ list"
+            name: "faqList"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+      - label: "Privacy policy"
+        name: "privacyPolicy"
+        file: "contents/privacy.md"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Page subtitle", name: "subtitle", widget: "string" }
+          - { label: "Policy", name: "policy", widget: "markdown" }
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "General"
+        name: "generalSettings"
+        file: "contents/settings/general.md"
+        fields:
+          - { label: "Website title", name: "siteTitle", widget: "string" }
+          - { label: Logo alternate title, name: "altTitle", widget: "string" }
+          - label: "Logo"
+            name: "logo"
+            widget: "image"
             required: false
             media_library:
               config:
                 multiple: false
-      - label: 'Widgets'
-        name: 'widgets'
-        file: 'contents/settings/widgets.md'
+      - label: "Widgets"
+        name: "widgets"
+        file: "contents/settings/widgets.md"
         fields:
-          - label: 'Social Widget'
-            name: 'socialWidget'
+          - label: "Social Widget"
+            name: "socialWidget"
             widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string}
-              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-              - {label: Facebook URL, name: facebookUrl, widget: string, required: false}
-              - {label: Instagram URL, name: instagramUrl, widget: string, required: false}
-              - {label: Twitter URL, name: twitterUrl, widget: string, required: false}
-          - label: 'Reach us Widget'
-            name: 'reachUsWidget'
+              - { label: Widget Title, name: widgetTitle, widget: string }
+              - {
+                  label: Enable,
+                  name: widgetEnable,
+                  widget: boolean,
+                  default: true,
+                }
+              - {
+                  label: Facebook URL,
+                  name: facebookUrl,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Instagram URL,
+                  name: instagramUrl,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Twitter URL,
+                  name: twitterUrl,
+                  widget: string,
+                  required: false,
+                }
+          - label: "Reach us Widget"
+            name: "reachUsWidget"
             widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string}
-              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-              - {label: Organisation Name, name: orgName, widget: string, required: true}
-              - {label: Address line 1 URL, name: addressLine1, widget: string, required: true}
-              - {label: Address line 2 URL, name: addressLine2, widget: string, required: false}
-              - {label: City, name: cityName, widget: string, required: true}
-              - {label: State, name: stateName, widget: string, required: true}
-              - {label: Pincode, name: pincode, widget: string, required: true}
-              - {label: Contact mail address, name: emailAddress, widget: string, required: false, pattern: ['^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$', 'Provide a valid email address']}
-              - {label: Contact phone number, name: phoneNumber, widget: string, required: false }
-          - label: 'Quick links Widget'
-            name: 'quickLinkWidget'            
+              - { label: Widget Title, name: widgetTitle, widget: string }
+              - {
+                  label: Enable,
+                  name: widgetEnable,
+                  widget: boolean,
+                  default: true,
+                }
+              - {
+                  label: Organisation Name,
+                  name: orgName,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: Address line 1 URL,
+                  name: addressLine1,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: Address line 2 URL,
+                  name: addressLine2,
+                  widget: string,
+                  required: false,
+                }
+              - { label: City, name: cityName, widget: string, required: true }
+              - {
+                  label: State,
+                  name: stateName,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: Pincode,
+                  name: pincode,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: Contact mail address,
+                  name: emailAddress,
+                  widget: string,
+                  required: false,
+                  pattern:
+                    [
+                      '^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$',
+                      "Provide a valid email address",
+                    ],
+                }
+              - {
+                  label: Contact phone number,
+                  name: phoneNumber,
+                  widget: string,
+                  required: false,
+                }
+          - label: "Quick links Widget"
+            name: "quickLinkWidget"
             widget: object
             fields:
-              - {label: Widget Title, name: widgetTitle, widget: string, default: 'We are social'}
-              - {label: Enable, name: widgetEnable, widget: boolean, default: true}
-              - label: 'Links list'
-                name: 'linkslist'
-                widget:
-                    'list'
-                fields: 
-                  - {label: 'Link title', name: 'title', widget: string, required: false}
-                  - {label: 'Link url', name: 'url', widget: string, required: false}
-      - label: 'Menus'
-        name: 'menus'
-        file: 'contents/settings/menus.md'
+              - {
+                  label: Widget Title,
+                  name: widgetTitle,
+                  widget: string,
+                  default: "We are social",
+                }
+              - {
+                  label: Enable,
+                  name: widgetEnable,
+                  widget: boolean,
+                  default: true,
+                }
+              - label: "Links list"
+                name: "linkslist"
+                widget: "list"
+                fields:
+                  - {
+                      label: "Link title",
+                      name: "title",
+                      widget: string,
+                      required: false,
+                    }
+                  - {
+                      label: "Link url",
+                      name: "url",
+                      widget: string,
+                      required: false,
+                    }
+      - label: "Menus"
+        name: "menus"
+        file: "contents/settings/menus.md"
         fields:
-          - label: 'Header navigation menu'
-            name: 'headerMenuNavigation'
-            widget:
-                'list'
+          - label: "Header navigation menu"
+            name: "headerMenuNavigation"
+            widget: "list"
             fields:
-              - {label: 'Menu Title', name: 'title', widget: 'string'}
-              - {label: 'Menu Screen reader Title', name: 'srTitle', widget: 'string'}
-              - {label: 'Menu URL', name: 'url', widget: 'string'}
-          - label: 'Header navigation special menu'
-            name: 'headerMenuSpecialNavigation'
-            widget:
-                'object'
+              - { label: "Menu Title", name: "title", widget: "string" }
+              - {
+                  label: "Menu Screen reader Title",
+                  name: "srTitle",
+                  widget: "string",
+                }
+              - { label: "Menu URL", name: "url", widget: "string" }
+          - label: "Header navigation special menu"
+            name: "headerMenuSpecialNavigation"
+            widget: "object"
             fields:
-              - {label: 'Menu Title', name: 'title', widget: 'string'}
-              - {label: 'Menu Screen reader Title', name: 'srTitle', widget: 'string'}
-              - {label: 'Menu URL', name: 'url', widget: 'string'}
-      - label: 'Subscription'
-        name: 'subscription'
-        file: 'contents/settings/subscription.md'
+              - { label: "Menu Title", name: "title", widget: "string" }
+              - {
+                  label: "Menu Screen reader Title",
+                  name: "srTitle",
+                  widget: "string",
+                }
+              - { label: "Menu URL", name: "url", widget: "string" }
+      - label: "Subscription"
+        name: "subscription"
+        file: "contents/settings/subscription.md"
         fields:
-          - {label: 'Title', name: 'title', widget: 'string'}
-          - {label: 'Subscribe button label', name: 'subscribeBtnLabel', widget: 'string'}
-          - label: 'Background image'
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Subscribe button label",
+              name: "subscribeBtnLabel",
+              widget: "string",
+            }
+          - label: "Background image"
             name: "backgroundImage"
-            widget: 'image'
-            default: 'img/newletter-background.png'
+            widget: "image"
+            default: "img/newletter-background.png"
             media_library:
               config:
                 multiple: false
-          - {label: 'Is background image a pattern', name: 'isBackgroundPattern', widget: boolean, default: false}
-          - {label: 'Show transparent background', name: 'isTransparentBackground', widget: boolean, default: false}
-      - label: 'Testimonials'
-        name: 'testimonials'
-        file: 'contents/settings/testimonails.md'
+          - {
+              label: "Is background image a pattern",
+              name: "isBackgroundPattern",
+              widget: boolean,
+              default: false,
+            }
+          - {
+              label: "Show transparent background",
+              name: "isTransparentBackground",
+              widget: boolean,
+              default: false,
+            }
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "contents/settings/testimonails.md"
         fields:
-          - label: 'Customer Testimonails'
-            name: 'customerTestimonials'
-            widget:
-                'list'
+          - label: "Customer Testimonails"
+            name: "customerTestimonials"
+            widget: "list"
             fields:
-              - {label: "Author", name: "author", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Designation", name: "role", widget: "text"}
-              - label: 'Author Image'
-                name: 'thumbnail'
-                widget: 'image'
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Designation", name: "role", widget: "text" }
+              - label: "Author Image"
+                name: "thumbnail"
+                widget: "image"
                 media_library:
                   config:
                     multiple: false
@@ -207,9 +319,9 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - {label: 'Title', name: 'title', widget: 'string'}
-      - {label: 'Excerpt', name: "excerpt", widget: 'string'}
-      - {label: 'Author', name: 'author', widget: 'string'}
-      - {label: 'Publish Date', name: 'date', widget: 'datetime'}
-      - {label: "Featured banner", name: "banner", widget: "image"}
-      - {label: "Story", name: "story", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured banner", name: "banner", widget: "image" }
+      - { label: "Story", name: "story", widget: "markdown" }
